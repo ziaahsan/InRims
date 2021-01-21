@@ -1,0 +1,43 @@
+// View animation all togather
+.cu-view {
+   position: relative;
+   display: block;
+}
+// .cu-view.ng-leave {
+//    -webkit-animation: scaleDownUp 0.3s ease both;
+//    animation: scaleDownUp 0.3s ease both;
+// }
+// .cu-view.ng-enter {
+//    -webkit-animation: scaleUpDown 0.3s ease both;
+//    animation: scaleUpDown 0.3s ease both;
+// }
+
+// Scaling animations
+@-webkit-keyframes scaleDownUp {
+   from { }
+   to {
+      opacity: 0;
+      -webkit-transform: scale(1.05);
+   }
+}
+@keyframes scaleDownUp {
+   from { }
+   to {
+      opacity: 0;
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+   }
+}
+@-webkit-keyframes scaleUpDown {
+   from {
+      opacity: 0;
+      -webkit-transform: scale(1.05);
+   }
+}
+@keyframes scaleUpDown {
+   from {
+      opacity: 0;
+      -webkit-transform: scale(1.05);
+      transform: scale(1.05);
+   }
+}

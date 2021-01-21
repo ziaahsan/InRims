@@ -1,0 +1,39 @@
+.cu-view {
+  position: relative;
+  display: block;
+}
+
+@-webkit-keyframes scaleDownUp {
+  from {
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1.05);
+  }
+}
+
+@keyframes scaleDownUp {
+  from {
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
+
+@-webkit-keyframes scaleUpDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(1.05);
+  }
+}
+
+@keyframes scaleUpDown {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+}
+/*# sourceMappingURL=animations.css.map */
