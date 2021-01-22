@@ -97,6 +97,7 @@ angular
                   dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
                   dummy.style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
                }, 25);
+               
                onEndTransition(dummy, function() {
                   // add transition class 
                   classie.remove(dummy, 'placeholder--trans-in');
