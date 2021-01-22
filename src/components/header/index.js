@@ -4,11 +4,11 @@
  */
 angular
    .module('js.angular.header', [])
-   .directive('headerOverlay', ['$timeout', '$http', '$compile', 'Header', function ($timeout, $http, $compile, Header) {
+   .component('headerOverlay', (() => {
       // Root view element to append items to
       var $ngHeaderOverlay;
 
-      // Directive object
+      // Component object
       return {
          restrict: 'E',
          replace: true,
@@ -34,7 +34,7 @@ angular
 
             // Redirection
             $scope.redirect = function (path) {
-               $location.path(path);
+
             }
          }];
       }
@@ -43,24 +43,8 @@ angular
       // NG - linkage
       //</summary>
       function link(scope, element) {
-         // Once initialized don't bother with constant initialization
-         // we will let the component handle it after intialiation...
-         // if ($ngHeaderOverlay) return;
          // Root element from view.html
          $ngHeaderOverlay = $(element);
          scope.init();
       }
-   }]);
-
-angular
-   .module('js.angular.header')
-   .provider("Header", function () {
-      return {
-         $get: ['$http', '$q', function ($http, $q) {
-            var that = this;
-            return {
-
-            }
-         }]
-      }
-   });
+   })());

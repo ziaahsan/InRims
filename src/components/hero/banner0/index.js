@@ -4,11 +4,11 @@
  */
 angular
    .module('js.angular.hero.banner0', [])
-   .directive('banner0Overlay', ['$timeout', '$http', '$compile', 'Banner0', function ($timeout, $http, $compile, Banner0) {
+   .component('heroBanner0Overlay', (() => {
       // Root view element to append items to
-      var $ngBanner0Overlay;
+      var $ngHeroBanner0Overlay;
 
-      // Directive object
+      // Component object
       return {
          restrict: 'E',
          replace: true,
@@ -29,12 +29,11 @@ angular
 
             // Initialization on-start
             $scope.init = function () {
-
             }
 
             // Redirection
             $scope.redirect = function (path) {
-               $location.path(path);
+
             }
          }];
       }
@@ -44,20 +43,7 @@ angular
       //</summary>
       function link(scope, element) {
          // Root element from view.html
-         $ngBanner0Overlay = $(element);
+         $ngHeroBanner0Overlay = $(element);
          scope.init();
       }
-   }]);
-
-angular
-   .module('js.angular.hero.banner0')
-   .provider("Banner0", function () {
-      return {
-         $get: ['$http', '$q', function ($http, $q) {
-            var that = this;
-            return {
-
-            }
-         }]
-      }
-   });
+   })());

@@ -22,7 +22,14 @@ $overlay-border-color: none !default;
 
 // Custom body
 body {
-   background-color: transparent;
+   background-color: #eeeeee;
    font-family: $font-family;
    overflow-x: hidden;
+}
+
+// Text colors
+.cu-text {
+   &-color-0 {
+      color: #fc5b00;
+   }
 }

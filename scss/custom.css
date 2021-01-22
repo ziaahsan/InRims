@@ -1,6 +1,10 @@
 body {
-  background-color: transparent;
+  background-color: #eeeeee;
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
+}
+
+.cu-text-color-0 {
+  color: #fc5b00;
 }
 /*# sourceMappingURL=custom.css.map */
