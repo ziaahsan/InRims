@@ -1,30 +1,33 @@
 $alpha: 0.97;
 
-// Primary
-$primary: rgba(40, 40, 40, $alpha) !default;
-$secondary: rgba(35, 35, 35, $alpha) !default;
-
-$primary-highlight: #337ef1 !default;
-$icon-magnifier-color: #a6a6a6 !default;
-
 // Font
-$font-family: "Open Sans", sans-serif !default;
-
-// Font colors
-$primary-color: rgba(255, 255, 255, $alpha) !default;
-$primary-color-dark: rgba(166, 166, 166, $alpha) !default;
-$primary-color-error: rgba(#e44c3c, $alpha) !default;
-$primary-highlight-color: #ffffff !default;
-
-// Colors for borders
-$border-color: rgba(55, 55, 55, $alpha) !default;
-$overlay-border-color: none !default;
+$font-family: 'lgc', sans-serif !default;
 
 // Custom body
 body {
    background-color: #eeeeee;
    font-family: $font-family;
    overflow-x: hidden;
+}
+
+// Overwrites
+.uk-{
+   &tooltip {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #222222;
+      font-weight: 600;
+   }
+}
+// Cart
+.cu-card-cart {
+   &-notication {
+      background-color: #ff3b2e!important;
+      color: #fff!important;
+      box-shadow: 1px 1px 24px #ff3b2e;
+      bottom: 171px;
+      right: 94px;
+   }
 }
 
 // Text colors

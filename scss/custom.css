@@ -1,7 +1,22 @@
 body {
   background-color: #eeeeee;
-  font-family: "Open Sans", sans-serif;
+  font-family: "lgc", sans-serif;
   overflow-x: hidden;
+}
+
+.uk-tooltip {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  color: #222222;
+  font-weight: 600;
+}
+
+.cu-card-cart-notication {
+  background-color: #ff3b2e !important;
+  color: #fff !important;
+  box-shadow: 1px 1px 24px #ff3b2e;
+  bottom: 171px;
+  right: 94px;
 }
 
 .cu-text-color-0 {

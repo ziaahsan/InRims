@@ -71,10 +71,10 @@ angular
                openItem = $($event.currentTarget).parents().eq(2)[0];
                classie.add(openItem, 'grid__item--animate');
 
-               setTimeout(function () { loadContent(openItem) }, 500);
+               setTimeout(function () { loadContent(openItem, path) }, 500);
             }
 
-            function loadContent(item) {
+            function loadContent(item, path) {
                // add expanding element/placeholder 
                var dummy = document.createElement('div');
                dummy.className = 'placeholder';
@@ -97,6 +97,16 @@ angular
                   dummy.style.WebkitTransform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
                   dummy.style.transform = 'translate3d(-5px, ' + (scrollY() - 5) + 'px, 0px)';
                }, 25);
+               onEndTransition(dummy, function() {
+                  // add transition class 
+                  classie.remove(dummy, 'placeholder--trans-in');
+                  classie.add(dummy, 'placeholder--trans-out');
+                  // sets overflow hidden to the body and allows the switch to the content scroll
+                  classie.addClass(bodyEl, 'noscroll');
+                  
+                  // Apply changes to route
+                  // $scope.$apply(() => {$location.path(path);});
+               });
             }
 
             function hideContent() {
