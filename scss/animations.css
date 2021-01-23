@@ -3,36 +3,18 @@
   display: block;
 }
 
-@-webkit-keyframes scaleDownUp {
-  from {
-  }
-  to {
-    opacity: 0;
-    -webkit-transform: scale(1.05);
-  }
-}
-
 @keyframes scaleDownUp {
   from {
   }
   to {
     opacity: 0;
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
-  }
-}
-
-@-webkit-keyframes scaleUpDown {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(1.05);
   }
 }
 
 @keyframes scaleUpDown {
   from {
     opacity: 0;
-    -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
 }
@@ -47,36 +29,25 @@
   top: 0;
   left: 0;
   background: #222222;
-  -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
 }
 
 .placeholder.placeholder--trans-in {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .placeholder.placeholder--trans-out {
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .title--preview {
-  -webkit-transition-delay: 0.15s;
   transition-delay: 0.15s;
 }
 
 .grid__item--animate .title--preview {
-  -webkit-transition-delay: 0s;
   transition-delay: 0s;
   opacity: 0;
-  -webkit-transform: translate3d(0, -20px, 0);
   transform: translate3d(0, -20px, 0);
 }
 /*# sourceMappingURL=animations.css.map */
