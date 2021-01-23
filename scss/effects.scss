@@ -3,14 +3,14 @@ $frame-count: 15;
 $offset-val: 1195;
 .frame-model-666m {
     z-index: 9;
-    width: 1136px;
-    height: 500px;
+    width: 1200px;
+    height: 650px;
     background-image: url('../images/model_0_1_ss.png');
     background-repeat: no-repeat;
-    background-position: -25px 50%;
+    background-position: -400px 50%;
 }
 @for $i from 1 through $frame-count {
     .frame-model-666m-#{$i} {
-        background-position: -(($i * $offset-val) + 25) + px 50%;
+        background-position: -(($i * $offset-val) + 400) + px 50%;
     }
 }

@@ -23,7 +23,7 @@ body {
 .cu-card-cart {
    &-notication {
       background-color: #ff3b2e!important;
-      color: #fff!important;
+      color: #ffffff!important;
       box-shadow: 1px 1px 24px #ff3b2e;
       bottom: 171px;
       right: 94px;
@@ -32,6 +32,9 @@ body {
 
 // Text colors
 .cu-text {
+   &-color-white {
+      color: #ffffff!important;
+   }
    &-color-0 {
       color: #fc5b00;
    }

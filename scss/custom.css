@@ -13,11 +13,14 @@ body {
 
 .cu-card-cart-notication {
   background-color: #ff3b2e !important;
-  color: #fff !important;
-  -webkit-box-shadow: 1px 1px 24px #ff3b2e;
-          box-shadow: 1px 1px 24px #ff3b2e;
+  color: #ffffff !important;
+  box-shadow: 1px 1px 24px #ff3b2e;
   bottom: 171px;
   right: 94px;
+}
+
+.cu-text-color-white {
+  color: #ffffff !important;
 }
 
 .cu-text-color-0 {
