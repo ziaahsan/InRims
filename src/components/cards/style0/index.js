@@ -68,10 +68,13 @@ angular
 
             // Redirection
             $scope.redirect = function ($event, path) {
-               openItem = $($event.currentTarget).parents().eq(2)[0];
-               classie.add(openItem, 'grid__item--animate');
+               // Apply changes to route
+               $location.path(path);
 
-               setTimeout(function () { loadContent(openItem, path) }, 500);
+               // openItem = $($event.currentTarget).parents().eq(2)[0];
+               // classie.add(openItem, 'grid__item--animate');
+
+               // setTimeout(function () { loadContent(openItem, path) }, 500);
             }
 
             function loadContent(item, path) {

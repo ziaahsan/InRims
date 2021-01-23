@@ -10,13 +10,15 @@
    // on-ready do...
    angular
       .module('js.angular.app', ['ngRoute', 'ngAnimate',
-                                 'js.angular.header', 'js.angular.footer', 'js.angular.hero.banner0',
+                                 'js.angular.header', 'js.angular.footer', 'js.angular.cart.reserve',
+                                 'js.angular.hero.banner0',
                                  'js.angular.cards.style0', 'js.angular.view.rim'])
       .config(($routeProvider) => {
          // Routing
          $routeProvider
             .when("/", { templateUrl: "src/templates/index.html", pageTitle: 'Home'})
-            .when("/rim/:id", { templateUrl: "src/templates/rim.html", pageTitle: 'Rim Model B100'});
+            .when("/rim/:id", { templateUrl: "src/templates/rim.html", pageTitle: 'Rim Model B100'})
+            .when("/cart/reserve/:id", { templateUrl: "src/templates/reserve.html", pageTitle: 'Reserve B100'});
       })
       .run(function ($rootScope, $location) {
          $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
