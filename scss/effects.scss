@@ -14,3 +14,19 @@ $offset-val: 1195;
         background-position: -(($i * $offset-val) + 400) + px 50%;
     }
 }
+
+$frame-count: 10;
+$offset-val: 1200;
+.frame-rim-b100 {
+    z-index: 9;
+    width: 900px;
+    height: 800px;
+    background-image: url('../images/b100_ss_shadow.png');
+    background-repeat: no-repeat;
+    background-position: -200px 50%;
+}
+@for $i from 1 through $frame-count {
+   .frame-rim-b100-#{$i} {
+        background-position: -(($i * $offset-val) + 200) + px 50%;
+   }
+}

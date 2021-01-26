@@ -66,4 +66,53 @@
 .frame-model-666m-15 {
   background-position: -18325px 50%;
 }
+
+.frame-rim-b100 {
+  z-index: 9;
+  width: 900px;
+  height: 800px;
+  background-image: url("../images/b100_ss_shadow.png");
+  background-repeat: no-repeat;
+  background-position: -200px 50%;
+}
+
+.frame-rim-b100-1 {
+  background-position: -1400px 50%;
+}
+
+.frame-rim-b100-2 {
+  background-position: -2600px 50%;
+}
+
+.frame-rim-b100-3 {
+  background-position: -3800px 50%;
+}
+
+.frame-rim-b100-4 {
+  background-position: -5000px 50%;
+}
+
+.frame-rim-b100-5 {
+  background-position: -6200px 50%;
+}
+
+.frame-rim-b100-6 {
+  background-position: -7400px 50%;
+}
+
+.frame-rim-b100-7 {
+  background-position: -8600px 50%;
+}
+
+.frame-rim-b100-8 {
+  background-position: -9800px 50%;
+}
+
+.frame-rim-b100-9 {
+  background-position: -11000px 50%;
+}
+
+.frame-rim-b100-10 {
+  background-position: -12200px 50%;
+}
 /*# sourceMappingURL=effects.css.map */

@@ -5,15 +5,11 @@
 angular
    .module('js.angular.header', [])
    .component('headerOverlay', (() => {
-      // Root view element to append items to
-      var $ngHeaderOverlay;
-
       // Component object
       return {
          restrict: 'E',
          replace: true,
          controller: controller(),
-         link: link,
          templateUrl: 'src/components/header/view.html'
       };
 
@@ -23,28 +19,19 @@ angular
       function controller() {
          return ['$scope', '$location', function ($scope, $location) {
             // Clean up
-            $scope.$on('$destroy', function () {
+             this.$onDestroy = function () {
 
-            });
+            }
 
             // Initialization on-start
-            $scope.init = function () {
+            this.$onInit = function () {
 
             }
 
             // Redirection
-            $scope.redirect = function (path) {
+            $scope.redirect = function ($event, path) {
 
             }
          }];
-      }
-
-      //<summary>
-      // NG - linkage
-      //</summary>
-      function link(scope, element) {
-         // Root element from view.html
-         $ngHeaderOverlay = $(element);
-         scope.init();
       }
    })());

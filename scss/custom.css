@@ -6,7 +6,7 @@ body {
 
 .uk-tooltip {
   font-family: 'Open Sans', sans-serif;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #222222;
   font-weight: 600;
 }
@@ -29,5 +29,13 @@ body {
 
 .cu-text-color-1 {
   color: #aaaaaa;
+}
+
+.cu-box-shadow-none {
+  box-shadow: none;
+}
+
+.cu-border-dark {
+  border: 1px solid #444;
 }
 /*# sourceMappingURL=custom.css.map */

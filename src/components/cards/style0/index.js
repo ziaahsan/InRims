@@ -5,9 +5,6 @@
 angular
    .module('js.angular.cards.style0', [])
    .component('cardsStyle0Overlay', (() => {
-      // Root view element to append items to
-      var $ngCardsStyle0OverlayOverlay;
-
       // Component object
       return {
          restrict: 'E',

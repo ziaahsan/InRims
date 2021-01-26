@@ -5,9 +5,6 @@
 angular
    .module('js.angular.footer', [])
    .component('footerOverlay', (() => {
-      // Root view element to append items to
-      var $ngfooterOverlayOverlay;
-
       // Component object
       return {
          restrict: 'E',

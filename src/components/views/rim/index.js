@@ -5,9 +5,6 @@
 angular
    .module('js.angular.view.rim', [])
    .component('viewRimOverlay', (() => {
-      // Root view element to append items to
-      var $ngViewRim;
-
       // Component object
       return {
          restrict: 'E',
@@ -40,8 +37,8 @@ angular
       // ScrollMagic library to handle some AWESOME sprite management effects.
       //</summary>
       function makeScrollMagic() {
-         let frame = document.querySelector('.frame-model-666m');
-         let frame_count = 14;
+         let frame = document.querySelector('.frame-rim-b100');
+         let frame_count = 9;
          let offset = 50;
          let scrollMagic;
 
@@ -53,20 +50,20 @@ angular
          
          new ScrollMagic.Scene({
             triggerHook: 0,
-            triggerElement: '.cu-car-model',
+            triggerElement: '.cu-frame-rim',
             duration: (frame_count * offset) + 'px',
             reverse: true
          })
-         .setPin('.cu-car-model')
+         .setPin('.cu-frame-rim')
          .addTo(scrollMagic);
 
          // build step frame scene
          for (var i = 1, l = frame_count; i <= l; i++) {
             new ScrollMagic.Scene({
-               triggerElement: '.cu-car-model',
+               triggerElement: '.cu-frame-rim',
                offset: i * offset
             })
-            .setClassToggle(frame, 'frame-model-666m-' + i)
+            .setClassToggle(frame, 'frame-rim-b100-' + i)
             .addTo(scrollMagic);
          }
       }

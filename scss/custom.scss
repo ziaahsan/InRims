@@ -10,35 +10,42 @@ body {
    overflow-x: hidden;
 }
 
-// Overwrites
+// uikit (uk) Overwrites
 .uk-{
    &tooltip {
       font-family: 'Open Sans', sans-serif;
-      background-color: #fff;
+      background-color: #ffffff;
       color: #222222;
       font-weight: 600;
    }
 }
-// Cart
-.cu-card-cart {
-   &-notication {
-      background-color: #ff3b2e!important;
-      color: #ffffff!important;
-      box-shadow: 1px 1px 24px #ff3b2e;
-      bottom: 171px;
-      right: 94px;
-   }
-}
 
-// Text colors
-.cu-text {
-   &-color-white {
-      color: #ffffff!important;
+// Custom (cu)
+.cu- {
+   &card-cart {
+      &-notication {
+         background-color: #ff3b2e!important;
+         color: #ffffff!important;
+         box-shadow: 1px 1px 24px #ff3b2e;
+         bottom: 171px;
+         right: 94px;
+      }
    }
-   &-color-0 {
-      color: #fc5b00;
+   &text {
+      &-color-white {
+         color: #ffffff!important;
+      }
+      &-color-0 {
+         color: #fc5b00;
+      }
+      &-color-1 {
+         color: #aaaaaa;
+      }
    }
-   &-color-1 {
-      color: #aaaaaa;
+   &box-shadow-none {
+      box-shadow: none;
+   }
+   &border-dark {
+      border: 1px solid #444;
    }
 }
