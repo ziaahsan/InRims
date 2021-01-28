@@ -3,7 +3,7 @@ $frame-count: 15;
 $offset-val: 1195;
 .frame-model-666m {
     z-index: 9;
-    width: 1200px;
+    width: 800px;
     height: 650px;
     background-image: url('../images/model_0_1_ss.png');
     background-repeat: no-repeat;
@@ -28,5 +28,29 @@ $offset-val: 1200;
 @for $i from 1 through $frame-count {
    .frame-rim-b100-#{$i} {
         background-position: -(($i * $offset-val) + 200) + px 50%;
+   }
+}
+
+// Gradient for Text
+.gradient- {
+   &text-1 {
+      /* Fallback: Set a background color. */
+      background-color: #ffffff;
+      
+      /* Create the gradient. */
+      // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-image: linear-gradient(45deg, #ff701f, #ff0066);
+      
+      /* Set the background size and repeat properties. */
+      background-size: 100%;
+      background-repeat: repeat;
+   
+      /* Use the text as a mask for the background. */
+      /* This will show the gradient as a text color rather than element bg. */
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; 
+      -moz-background-clip: text;
+      -moz-text-fill-color: transparent;
    }
 }

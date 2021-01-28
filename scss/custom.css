@@ -11,6 +11,31 @@ body {
   font-weight: 600;
 }
 
+.cu-font-montextralight {
+  font-family: 'montextralight', sans-serif;
+}
+
+.cu-font-montextraheavy {
+  font-family: 'montextraheavy', sans-serif;
+}
+
+.cu-font-lgbcb {
+  font-family: 'lgcb', sans-serif;
+}
+
+.cu-font-lgcl {
+  font-family: 'lgcl', sans-serif;
+}
+
+.cu-font-lgc {
+  font-family: 'lgc', sans-serif;
+}
+
+.cu-view {
+  position: relative;
+  display: block;
+}
+
 .cu-card-cart-notication {
   background-color: #ff3b2e !important;
   color: #ffffff !important;

@@ -22,6 +22,27 @@ body {
 
 // Custom (cu)
 .cu- {
+   // Fonts
+   &font-montextralight {
+      font-family: 'montextralight', sans-serif;
+   }
+   &font-montextraheavy {
+      font-family: 'montextraheavy', sans-serif;
+   }
+   &font-lgbcb {
+      font-family: 'lgcb', sans-serif;
+   }
+   &font-lgcl {
+      font-family: 'lgcl', sans-serif;
+   }
+   &font-lgc {
+      font-family: 'lgc', sans-serif;
+   }
+
+   &view {
+      position: relative;
+      display: block;
+   }
    &card-cart {
       &-notication {
          background-color: #ff3b2e!important;

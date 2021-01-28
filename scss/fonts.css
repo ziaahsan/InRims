@@ -13,10 +13,6 @@
   src: url(../fonts/lgcb.ttf);
 }
 
-.cu-font-lgcb {
-  font-family: 'lgcb', sans-serif;
-}
-
 @font-face {
   font-family: lgcl;
   src: url(../fonts/lgcl.ttf);
