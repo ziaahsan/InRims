@@ -1,16 +1,15 @@
 "use strict";
 /* 
  * Script Description:
+ *
  */
 angular
-   .module('js.angular.cards.style0', [])
-   .component('cardsStyle0Overlay', (() => {
+   .module('js.angular.app')
+   .component('itemListsOverlay', (() => {
       // Component object
       return {
-         restrict: 'E',
-         replace: true,
          controller: controller(),
-         templateUrl: 'src/components/cards/style0/view.html'
+         templateUrl: 'src/components/item/lists/view.html'
       };
 
       //<summary>
@@ -18,16 +17,23 @@ angular
       //</summary>
       function controller() {
          return ['$scope', '$location', '$http', '$window', '$sce', function ($scope, $location, $http, $window, $sce) {
-            $scope.cards = '';
+            var ctrl = this;
+
+            // Setup cards
+            ctrl.cards = '';
 
             // Clean up
-            this.$onDestroy = function () {
+            ctrl.$onDestroy = function () {
 
             }
 
             // Initialization on-start
-            this.$onInit = function () {
-               $scope.loadRimJson();
+            ctrl.$onInit = function () {
+               loadRimJson();
+            }
+
+            $scope.sanitizeText = function (text) {
+               return $sce.trustAsHtml(text);
             }
 
             // Redirection
@@ -36,16 +42,12 @@ angular
                $location.path(uri);
             }
 
-            $scope.loadRimJson = function () {
+            // @todo: For now fetch all data, but in general this is not the case
+            function loadRimJson () {
                let url = 'http://192.168.2.31/AngularJS/Wheels/data/rims.json';
                $http.get(url).then(results => {
-                  $scope.cards = results.data;
-                  console.log($scope.cards)
+                  ctrl.cards = results.data;
                })
-            }
-
-            $scope.sanitizeText = function (text) {
-               return $sce.trustAsHtml(text);
             }
          }];
       }

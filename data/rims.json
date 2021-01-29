@@ -1,5 +1,5 @@
 {
-   "B100": {
+   "b100": {
       "bolt_pattern": "5x120",
       "bore_size": "72.6MM",
       "currency": "cad",
@@ -46,7 +46,7 @@
       "type": "BMW",
       "uri": "b100"
    },
-   "M100": {
+   "m100": {
       "bolt_pattern": "5x120",
       "bore_size": "72.6MM",
       "currency": "cad",
@@ -93,7 +93,7 @@
       "type": "BMW",
       "uri": "m100"
    },
-   "W100": {
+   "w100": {
       "bolt_pattern": "5x120",
       "bore_size": "72.6MM",
       "currency": "cad",

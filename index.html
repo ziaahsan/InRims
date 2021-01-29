@@ -4,67 +4,100 @@
 <!DOCTYPE html>
 <!-- We will declare our module on html(not body) why? simply ng-bind on @pageTitle... -->
 <html lang="en" ng-app="js.angular.app">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="
             width=device-width,
             initial-scale=1.0,
             maximum-scale=1.0,
             user-scalable=no,
             minimal-ui
-         ">
-   <!--
+         "
+		/>
+		<!--
       Reason for @http-equiv: Simply put, we want to tight up the security on the client side.
                               For static pages may not require, but keep in mind for server-client communications.
-   -->
-   <meta http-equiv="Content-Security-Policy" content="
+      -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="
             default-src 'self';
             style-src   'self' https://fonts.googleapis.com 'unsafe-inline';
             img-src     'self' data: https:;
             font-src    'self' https://fonts.gstatic.com;
             connect-src 'self';
-            script-src  'self' localhost: 'unsafe-inline';
-        ">
-   
-   <title ng-bind="pageTitle">Page Title</title>
-   <link href="icons/favicon.png" type="image/png" rel="icon">
+            script-src  'self' localhost:;
+        "
+		/>
 
-   <!-- External Dependencies -->
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" type="text/css" rel="stylesheet">
-   
-   <!-- UIKit Framework -->
-   <link href="frameworks/uikit/3.6.11/css/uikit.min.css" type="text/css" rel="stylesheet">
-   <script src="frameworks/uikit/3.6.11/js/uikit.min.js"></script>
-   <script src="frameworks/uikit/3.6.11/js/uikit-icons.min.js"></script>
+		<title ng-bind="root.pageTitle">Page Title</title>
+		<link
+			href="icons/favicon.png"
+			type="image/png"
+			rel="icon"
+		/>
 
-   <!-- CSS -->
-   <link href="scss/fonts.css" type="text/css" rel="stylesheet">
-   <link href="scss/custom.css" type="text/css" rel="stylesheet">
-   <link href="scss/animations.css" type="text/css" rel="stylesheet">
-   <link href="scss/effects.css" type="text/css" rel="stylesheet">
-   
-   <!-- JS -->
-   <script src="js/jquery/3.5.1/jquery.min.js"></script>
-   <script src="js/angular/1.8.2/angular.min.js"></script>
-   <script src="js/angular/1.8.2/angular-route.js"></script>
-   <script src="js/angular/1.8.2/angular-animate.js"></script>
-   <script src="js/angular/1.8.2/angular-sanitize.min.js"></script>
-   <script src="js/scrollMagic/2.0.8/ScrollMagic.min.js"></script>
-   <script src="js/modernizr/modernizr.js"></script>
-   <script src="js/classie/1.0.1/classie.js"></script>
+		<!-- External Dependencies -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+			type="text/css"
+			rel="stylesheet"
+		/>
 
-   <!-- Angular Config & Components -->
-   <script src="src/components/header/index.js"></script>
-   <script src="src/components/footer/index.js"></script>
-   <script src="src/components/cart/index.js"></script>
-   <script src="src/components/hero/banner0/index.js"></script>
-   <script src="src/components/cards/style0/index.js"></script>
-   <script src="src/components/views/rim/index.js"></script>
-   <script src="src/index-config.js"></script>
-</head>
+		<!-- UIKit Framework -->
+		<link
+			href="frameworks/uikit/3.6.11/css/uikit.min.css"
+			type="text/css"
+			rel="stylesheet"
+		/>
+		<script src="frameworks/uikit/3.6.11/js/uikit.min.js"></script>
+		<script src="frameworks/uikit/3.6.11/js/uikit-icons.min.js"></script>
 
-<body class="uk-light uk-background-secondary">
-   <ng-view class="cu-view"></ng-view>
-</body>
+		<!-- CSS -->
+		<link
+			href="scss/fonts.css"
+			type="text/css"
+			rel="stylesheet"
+		/>
+		<link
+			href="scss/custom.css"
+			type="text/css"
+			rel="stylesheet"
+		/>
+		<link
+			href="scss/animations.css"
+			type="text/css"
+			rel="stylesheet"
+		/>
+		<link
+			href="scss/effects.css"
+			type="text/css"
+			rel="stylesheet"
+		/>
 
+		<!-- JS -->
+		<script src="js/jquery/3.5.1/jquery.min.js"></script>
+		<script src="js/angular/1.8.2/angular.min.js"></script>
+		<script src="js/angular/1.8.2/angular-route.js"></script>
+		<script src="js/angular/1.8.2/angular-animate.js"></script>
+		<script src="js/angular/1.8.2/angular-sanitize.min.js"></script>
+		<script src="js/scrollMagic/2.0.8/ScrollMagic.min.js"></script>
+		<script src="js/modernizr/modernizr.js"></script>
+		<script src="js/classie/1.0.1/classie.js"></script>
+
+		<!-- Angular Config & Components -->
+		<script src="src/index-config.js"></script>
+		<script src="src/components/header/index.js"></script>
+		<script src="src/components/cart/index.js"></script>
+		<script src="src/components/hero/index.js"></script>
+		<script src="src/components/item/lists/index.js"></script>
+		<script src="src/components/item/details/index.js"></script>
+		<script src="src/components/footer/index.js"></script>
+	</head>
+
+	<body class="uk-light uk-background-secondary">
+		<ng-view class="cu-view"></ng-view>
+	</body>
 </html>

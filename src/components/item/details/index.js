@@ -3,35 +3,51 @@
  * Script Description:
  */
 angular
-   .module('js.angular.view.rim', [])
-   .component('viewRimOverlay', (() => {
+   .module('js.angular.app')
+   .component('itemDetailsOverlay', (() => {
       // Component object
       return {
-         restrict: 'E',
-         replace: true,
          controller: controller(),
-         templateUrl: 'src/components/views/rim/view.html'
+         templateUrl: 'src/components/item/details/view.html'
       };
 
       //<summary>
       // NG - controller
       //</summary>
       function controller() {
-         return ['$scope', '$location', function ($scope, $location) {
-           // Clean up
-            this.$onDestroy = function () {
+         return ['$scope', '$location', '$window', '$http', '$routeParams', function ($scope, $location, $window, $http, $routeParams) {
+            var ctrl = this;
+
+            // Setup cards
+            ctrl.info = '';
+
+            // Clean up
+            ctrl.$onDestroy = function () {
 
             }
 
             // Initialization on-start
-            this.$onInit = function () {
+            ctrl.$onInit = function () {
                makeScrollMagic();
+               loadJSONData($routeParams.id);
             }
+
             // Redirection
-            $scope.redirect = function (path) {
+            ctrl.redirect = function ($event, path) {
+
+            }
+
+            // @todo: For now fetch all just like lists, but in general this is not the case
+            function loadJSONData (id) {
+               let url = 'http://192.168.2.31/AngularJS/Wheels/data/rims.json';
+               $http.get(url).then(results => {
+                  ctrl.info = results.data[id];
+               })
             }
          }];
       }
+
+      
 
       //<summary>
       // ScrollMagic library to handle some AWESOME sprite management effects.
@@ -47,15 +63,15 @@ angular
                triggerHook: 0
             }
          });
-         
+
          new ScrollMagic.Scene({
             triggerHook: 0,
             triggerElement: '.cu-frame-rim',
             duration: (frame_count * offset) + 'px',
             reverse: true
          })
-         .setPin('.cu-frame-rim')
-         .addTo(scrollMagic);
+            .setPin('.cu-frame-rim')
+            .addTo(scrollMagic);
 
          // build step frame scene
          for (var i = 1, l = frame_count; i <= l; i++) {
@@ -63,8 +79,8 @@ angular
                triggerElement: '.cu-frame-rim',
                offset: i * offset
             })
-            .setClassToggle(frame, 'frame-rim-b100-' + i)
-            .addTo(scrollMagic);
+               .setClassToggle(frame, 'frame-rim-b100-' + i)
+               .addTo(scrollMagic);
          }
       }
    })());

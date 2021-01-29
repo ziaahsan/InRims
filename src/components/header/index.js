@@ -3,12 +3,10 @@
  * Script Description:
  */
 angular
-   .module('js.angular.header', [])
+   .module('js.angular.app')
    .component('headerOverlay', (() => {
       // Component object
       return {
-         restrict: 'E',
-         replace: true,
          controller: controller(),
          templateUrl: 'src/components/header/view.html'
       };
@@ -17,19 +15,24 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['$scope', '$location', function ($scope, $location) {
+         return ['appName', '$scope', '$location', '$window', function (appName, $scope, $location, $window) {
+            var ctrl = this;
+
+            // App name
+            ctrl.appName = appName;
+
             // Clean up
-             this.$onDestroy = function () {
+            ctrl.$onDestroy = function () {
 
             }
 
             // Initialization on-start
-            this.$onInit = function () {
+            ctrl.$onInit = function () {
 
             }
 
             // Redirection
-            $scope.redirect = function ($event, path) {
+            ctrl.redirect = function ($event, path) {
 
             }
          }];

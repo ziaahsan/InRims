@@ -4,11 +4,11 @@
  */
 angular
    .module('js.angular.app')
-   .component('cartOverlay', (() => {
+   .component('heroOverlay', (() => {
       // Component object
       return {
          controller: controller(),
-         templateUrl: 'src/components/cart/view.html'
+         templateUrl: 'src/components/hero/view.html'
       };
 
       //<summary>

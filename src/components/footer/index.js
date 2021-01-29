@@ -3,12 +3,10 @@
  * Script Description:
  */
 angular
-   .module('js.angular.footer', [])
+   .module('js.angular.app')
    .component('footerOverlay', (() => {
       // Component object
       return {
-         restrict: 'E',
-         replace: true,
          controller: controller(),
          templateUrl: 'src/components/footer/view.html'
       };
@@ -17,21 +15,27 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['$scope', '$location', '$window', function ($scope, $location, $window) {            
+         return ['appName', '$scope', '$location', '$window', function (appName, $scope, $location, $window) {
+            var ctrl = this;
+
+            // App name
+            ctrl.appName = appName;
+            ctrl.date = new Date();
+
             // Clean up
-            this.$onDestroy = function () {
+            ctrl.$onDestroy = function () {
 
             }
 
             // Initialization on-start
-            this.$onInit = function () {
+            ctrl.$onInit = function () {
 
             }
 
             // Redirection
-            $scope.redirect = function ($event, path) {
+            ctrl.redirect = function ($event, path) {
 
             }
-        }];
+         }];
       }
    })());
