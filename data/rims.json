@@ -80,8 +80,8 @@
          }
       ],
       "image": {
-         "sprite": "images\/b100_ss_shadow.png",
-         "model": "images\/m666_shadow.png"
+         "sprite": "images\/model_0_2_ss.png",
+         "model": "images\/tire2_0_shadow.png"
       },
       "price": "175",
       "sizes": ["18x8"],

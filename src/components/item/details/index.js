@@ -16,6 +16,7 @@ angular
       //</summary>
       function controller() {
          return ['$scope', '$location', '$window', '$http', '$routeParams', function ($scope, $location, $window, $http, $routeParams) {
+            let root = document.documentElement;
             var ctrl = this;
 
             // Setup info
@@ -42,6 +43,7 @@ angular
                let url = 'http://192.168.2.31/AngularJS/Wheels/data/rims.json';
                $http.get(url).then(results => {
                   ctrl.info = results.data[id];
+                  root.style.setProperty('--rim-sprite-sheet', `url("../${ctrl.info.image.sprite}")`);
                })
             }
          }];
@@ -53,7 +55,7 @@ angular
       // ScrollMagic library to handle some AWESOME sprite management effects.
       //</summary>
       function makeScrollMagic() {
-         let frame = document.querySelector('.frame-rim-b100');
+         let frame = document.querySelector('.frame-rim');
          let frame_count = 9;
          let offset = 50;
          let scrollMagic;
@@ -79,7 +81,7 @@ angular
                triggerElement: '.cu-frame-rim',
                offset: i * offset
             })
-               .setClassToggle(frame, 'frame-rim-b100-' + i)
+               .setClassToggle(frame, 'frame-rim-' + i)
                .addTo(scrollMagic);
          }
       }
