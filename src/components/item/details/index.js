@@ -18,7 +18,7 @@ angular
          return ['$scope', '$location', '$window', '$http', '$routeParams', function ($scope, $location, $window, $http, $routeParams) {
             var ctrl = this;
 
-            // Setup cards
+            // Setup info
             ctrl.info = '';
 
             // Clean up
@@ -32,8 +32,8 @@ angular
                loadJSONData($routeParams.id);
             }
 
-            // Redirection
-            ctrl.redirect = function ($event, path) {
+            // Esc key callback
+            function closeOnEscKey () {
 
             }
 

@@ -32,7 +32,7 @@ angular
             }
 
             // Redirection
-            ctrl.redirect = function ($event, path) {
+            $scope.redirect = function ($event, path) {
 
             }
          }];

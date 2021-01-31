@@ -27,11 +27,6 @@ angular
             ctrl.$onInit = function () {
 
             }
-
-            // Redirection
-            ctrl.redirect = function ($event, path) {
-
-            }
          }];
       }
    })());

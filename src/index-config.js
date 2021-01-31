@@ -5,6 +5,7 @@
  *    MVC is good and all but I prefer to setup project this way for making my life easier for smaller projects with N number of components.
  *    Everything in here can very easily be migrated to MVC/Angular structure if need be.
  *    https://docs.angularjs.org/guide/component#component-based-application-architecture
+ *    https://docs.angularjs.org/guide/component-router (@Router LifeCycle Hooks)
  */
 (function () {
    // on-ready do...

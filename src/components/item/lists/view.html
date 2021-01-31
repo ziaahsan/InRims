@@ -21,16 +21,19 @@
                      <a class="uk-button uk-button-default" ng-click="redirect($event, 'details', card.uri)">View Model</a>
                      <span ng-if="card.stock.quantity > 0">
                         <a class="uk-button uk-button-primary uk-box-shadow-medium" ng-click="redirect($event, 'cart', card.uri)">
-                           <span class="uk-badge uk-text-bold uk-position-absolute uk-box-shadow-medium cu-card-cart-notication">{{ card.stock.quantity }}</span>
                            <span uk-icon="cart"></span>
                         </a>
-                        <p class="uk-text-small">No online payment required.<br/>Simply reserve, and that's all.</p>
+                        <p class="uk-text-small">
+                           <span class="cu-text-color-3">{{ card.stock.quantity }} In Stock</span>
+                           <br/>
+                           No online payment required.<br/>Simply reserve, and that's all.
+                        </p>
                      </span>
                      <span ng-if="card.stock.quantity == 0">
                         <a class="uk-button uk-button-secondary uk-box-shadow-medium" ng-click="redirect($event, 'cart', card.uri)">
                            <span uk-icon="cart"></span>
                         </a>
-                        <p class="uk-text-small" ng-if="card.stock.quantity == 0">Out of Stock.<br/>Check back later.</p>
+                        <p class="uk-text-small">Out of Stock.<br/>Check back later.</p>
                      </span>
                   </div>
                </div>

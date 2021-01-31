@@ -10,99 +10,90 @@
             <div>
                 <div uk-sticky="offset: 200;bottom: 400;">
                     <img src="images/m666_shadow.png" width="800" uk-img>
+                     <span>
+                        <span class="uk-position-absolute uk-transform-center" style="left: 50%; top: 5%" href="#" uk-marker uk-tooltip="title: Rim Size"></span>
+                        <span class="uk-position-absolute uk-transform-center" style="left: 22%; top: 30%" href="#" uk-marker uk-tooltip="title: Finish"></span>
+                        <span class="uk-position-absolute uk-transform-center" style="left: 55%; top: 50%" href="#" uk-marker uk-tooltip="title: Bolt Pattern"></span>
+                        <span class="uk-position-absolute uk-transform-center" style="left: 45%; top: 35%" href="#" uk-marker uk-tooltip="title: Bore Size"></span>
+                     </span>
                     <h4 class="uk-margin-remove uk-text-center">Upon delievery x4</h4>
-                    <h5 class="uk-margin-remove uk-text-center">Request for help if your not sure</h5>
+                    <h5 class="uk-margin-remove uk-text-center">Request for help if your need more information</h5>
                 </div>
             </div>
             <div>
                <div class="uk-margin">
-                  <h1 class="uk-margin-remove">B100</h1>
-                  <p class="uk-margin-remove cu-text-color-0 uk-text-bold">CAD $699.00/Set</p>
-                  <p class="uk-margin uk-width-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                  <h1 class="uk-margin-remove">{{ $ctrl.info.title }}</h1>
+                  <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ $ctrl.info.currency }} {{ $ctrl.info.price }}/Set</p>
+                  <p class="uk-margin uk-width-large">{{ $ctrl.info.description }}</p>
                   <p class="uk-margin-remove"><span uk-icon="icon: comment"></span> Have a question? <a href="#">Ask us.</a></p>
                </div>
                <div class="uk-margin">
                   <h3 class="uk-margin-remove">Your Model</h3>
                   <p class="uk-margin-remove">Will this fit my BMW model?</p>
                   <div class="uk-padding-small uk-margin uk-border-rounded uk-width-medium cu-border-dark">
-                     <h4 class="uk-margin-remove">B100 Style</h4>
-                     <p class="uk-margin-remove">A 18" rim with perfect black gloss</p>
+                     <h4 class="uk-margin-remove">{{ $ctrl.info.extra_info[0].title }}</h4>
+                     <p class="uk-margin-remove">{{ $ctrl.info.extra_info[0].description }}</p>
                   </div>
                </div>
                <div class="uk-margin">
                   <h3 class="uk-margin-remove">Rim Finish</h3>
-                  <p class="uk-margin-remove">How the B100 was compeleted</p>
-                  <div class="uk-padding-small uk-margin uk-border-rounded uk-width-small uk-text-center cu-border-dark">
+                  <p class="uk-margin-remove">How the {{ $ctrl.info.title }} was compeleted</p>
+                  <div class="uk-padding-small uk-margin uk-border-rounded uk-width-small uk-text-center cu-border-dark"  ng-repeat="color in $ctrl.info.colors">
                      <h4 class="uk-margin-remove"></h4>
-                     <p class="uk-margin-remove">Black</p>
+                     <p class="uk-margin-remove">{{ color }}</p>
                   </div>
                </div>
                <div class="uk-margin">
                   <h3 class="uk-margin-remove">Bolt & Bore Size</h3>
-                  <p class="uk-margin-remove">B100 bolt pattern and bore size</p>
+                  <p class="uk-margin-remove">{{ $ctrl.info.title }} bolt pattern and bore size</p>
                   <div class="uk-width-large uk-margin">
                      <div class="uk-padding-small uk-border-rounded cu-border-dark uk-column-1-2 uk-column-divider uk-margin">
                         <div>
-                           <h4 class="uk-margin-remove">B100 Style</h4>
-                           <p class="uk-margin-remove">A 18" rim with perfect black gloss</p>
+                           <h4 class="uk-margin-remove">Bolt Pattern</h4>
+                           <p class="uk-margin-remove">The {{ $ctrl.info.title }} has a bolt pattern of {{ $ctrl.info.bolt_pattern }}</p>
                         </div>
                         <div>
-                           <h4 class="uk-margin-remove">B100 Style</h4>
-                           <p class="uk-margin-remove">A 18" rim with perfect black gloss</p>
+                           <h4 class="uk-margin-remove">Bore Size</h4>
+                           <p class="uk-margin-remove">The Bore size of {{ $ctrl.info.title }} is {{ $ctrl.info.bore_size }}</p>
                         </div>
                      </div>
-                  </div>
-               </div>
-               <div class="uk-margin">
-                  <h3 class="uk-margin-remove">Quantity</h3>
-                  <p class="uk-margin-remove">What you will get</p>
-                  <div class="uk-padding-small uk-margin uk-border-rounded uk-width-medium cu-border-dark">
-                     <h4 class="uk-margin-remove">B100 Style</h4>
-                     <p class="uk-margin-remove">A 18" rim with perfect black gloss</p>
                   </div>
                </div>
                <div class="uk-margin">
                   <h3 class="uk-margin-remove">Devilery</h3>
-                  <p class="uk-margin-remove">Choose an option from below</p>
-                  <div class="uk-width-large uk-column-1-3 uk-margin uk-text-center cu-border-dark">
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">GTA</h5>
+                  <p class="uk-margin-remove">Choose an option from below:</p>
+                  <div class="uk-margin">
+                     <div uk-form-custom="target: > * > span:first-child">
+                         <select>
+                             <option value="">Please select City</option>
+                             <option value="1">Option 01</option>
+                             <option value="2">Option 02</option>
+                             <option value="3">Option 03</option>
+                             <option value="4">Option 04</option>
+                         </select>
+                         <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                             <span></span>
+                             <span uk-icon="icon: chevron-down"></span>
+                         </button>
                      </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Pickering</h5>
-                     </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Ajax</h5>
-                     </div>
-                  </div>
-                  <div class="uk-width-large uk-column-1-3 uk-margin uk-text-center cu-border-dark">
-                     <div class="uk-padding-small uk-border-rounde">
-                        <h5 class="uk-margin-remove">Whitby</h5>
-                     </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Markham</h5>
-                     </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Vaughan</h5>
-                     </div>
-                  </div>
-                  <div class="uk-width-large uk-column-1-3 uk-margin uk-text-center cu-border-dark">
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Mississauga</h5>
-                     </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Brampton</h5>
-                     </div>
-                     <div class="uk-padding-small uk-border-rounded">
-                        <h5 class="uk-margin-remove">Oakville</h5>
-                     </div>
-                  </div>
+                     <div class="uk-margin">
+                        <div class="uk-inline uk-width-large">
+                            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: phone"></a>
+                            <input class="uk-input" type="text" placeholder="* Phone Number Required for Reservation Verfication">
+                        </div>
+                    </div>
+                 </div>
                </div>
                <div>
-                  <button class="uk-button uk-button-primary uk-border-rounded">Reserve B100 Model</button>
+                  <button class="uk-button uk-button-primary uk-border-rounded">Reserve {{ $ctrl.info.title }} Model</button>
                   <button class="uk-button uk-button-default uk-border-rounded">Cancel</button>
-                  <p class="uk-text-small uk-width-large">
+                  <p class="uk-text-small uk-width-large cu-text-color-2" ng-if="$ctrl.info.stock.quantity == 0">
+                     <b>Out of Stock.</b><br/>Reserve model for when it becomes avliable.
+                  </p>
+                  <p class="uk-text-small uk-width-large" ng-if="$ctrl.info.stock.quantity != 0">
                      This is only a reservation. Based on our demand we will verify before finalizing your order.
+                     This is not a commitment.
+                     If we are unable to verify your verfication you forefit your reservation.
                   </p>
                </div>
             </div>

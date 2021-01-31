@@ -48,8 +48,6 @@ body {
          background-color: #ff3b2e!important;
          color: #ffffff!important;
          box-shadow: 1px 1px 24px #ff3b2e;
-         bottom: 171px;
-         right: 94px;
       }
    }
    &text {
@@ -61,6 +59,12 @@ body {
       }
       &-color-1 {
          color: #aaaaaa;
+      }
+      &-color-2 {
+         color: #dc4f4b;
+      }
+      &-color-3 {
+         color: #02f607;
       }
    }
    &box-shadow-none {
