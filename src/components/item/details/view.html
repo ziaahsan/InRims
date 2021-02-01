@@ -54,10 +54,14 @@
          </div>
       </div>
       <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity > 0">
-         <p class="uk-text-small">No online payment required.<br/>Simply reserve, and that's all.</p>
+         <p class="uk-text-small">
+            <span class="cu-text-color-3">{{ $ctrl.info.stock.quantity }} In Stock</span>
+            <br/>
+            No online payment required.<br/>Simply reserve, and that's all.
+         </p>
       </div>
       <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity == 0">
-         <p class="uk-text-small">Out of Stock.<br/>Check back later.</p>
+         <p class="uk-text-small"><span class="cu-text-color-2">Out of Stock.</span><br/>Check back later.</p>
       </div>
       <!-- <div class="uk-child-width-expand@s uk-flex uk-flex-middle uk-flex-center uk-padding-large" uk-grid>
          <div class="uk-width-1-3">
