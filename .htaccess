@@ -1,0 +1,14 @@
+Order deny,allow
+
+# disable directory browsing
+Options -Indexes
+
+# prevent folder listing
+IndexIgnore *
+
+# Default handler
+DirectoryIndex index.html
+
+<Files ~ "\.(html|css|js|jsx|png|map)$">
+   allow from all
+</Files>
