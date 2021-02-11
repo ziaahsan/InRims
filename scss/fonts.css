@@ -22,34 +22,4 @@
   font-family: lgc;
   src: url(../fonts/lgc.ttf);
 }
-
-@font-face {
-  font-family: minecraft;
-  src: url(../fonts/minecraft.ttf);
-}
-
-@font-face {
-  font-family: slkscr;
-  src: url(../fonts/slkscr.ttf);
-}
-
-@font-face {
-  font-family: Slkscr;
-  src: url(../fonts/Slkscr.ttf);
-}
-
-@font-face {
-  font-family: slkscre;
-  src: url(../fonts/slkscre.ttf);
-}
-
-@font-face {
-  font-family: slkscreb;
-  src: url(../fonts/slkscreb.ttf);
-}
-
-@font-face {
-  font-family: blueprint;
-  src: url(../fonts/blueprint.ttf);
-}
 /*# sourceMappingURL=fonts.css.map */

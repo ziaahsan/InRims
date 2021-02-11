@@ -15,7 +15,7 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['$scope', '$location', '$window', '$http', '$routeParams', function ($scope, $location, $window, $http, $routeParams) {
+         return ['appInfo', '$scope', '$location', '$window', '$http', '$routeParams', function (appInfo, $scope, $location, $window, $http, $routeParams) {
             let root = document.documentElement;
             var ctrl = this;
 
@@ -40,8 +40,7 @@ angular
 
             // @todo: For now fetch all just like lists, but in general this is not the case
             function loadJSONData (id) {
-               let url = 'http://192.168.2.31/AngularJS/Wheels/data/rims.json';
-               $http.get(url).then(results => {
+               $http.get(appInfo.jsonDataURL).then(results => {
                   ctrl.info = results.data[id];
                   root.style.setProperty('--rim-sprite-sheet', `url("../${ctrl.info.image.sprite}")`);
                })

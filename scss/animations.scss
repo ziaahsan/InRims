@@ -1,33 +1,3 @@
-// Scaling animations
-@-webkit-keyframes scaleDownUp {
-   from { }
-   to {
-      opacity: 0;
-      -webkit-transform: scale(1.05);
-   }
-}
-@keyframes scaleDownUp {
-   from { }
-   to {
-      opacity: 0;
-      -webkit-transform: scale(1.05);
-      transform: scale(1.05);
-   }
-}
-@-webkit-keyframes scaleUpDown {
-   from {
-      opacity: 0;
-      -webkit-transform: scale(1.05);
-   }
-}
-@keyframes scaleUpDown {
-   from {
-      opacity: 0;
-      -webkit-transform: scale(1.05);
-      transform: scale(1.05);
-   }
-}
-
 // Circle fade up
 .cu-clip-path {
    &-circle-expand {
@@ -46,43 +16,3 @@
       clip-path: circle(50% at 50% 50%);
    }
  }
-
-$anim-time: 0.5s;
-/* Placeholder element (dummy that gets animated when we click on an item) */
-.placeholder {
-	pointer-events: none;
-	position: absolute;
-	width: calc(100% + 5px);
-	height: calc(100vh + 5px);
-	z-index: 100;
-	top: 0;
-	left: 0;
-	background: #222222;
-	-webkit-transform-origin: 0 0;
-	transform-origin: 0 0;
-}
-
-.placeholder.placeholder--trans-in {
-	-webkit-transition: -webkit-transform $anim-time;
-	transition: transform $anim-time;
-	-webkit-transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
-	transition-timing-function: cubic-bezier(0.165,0.84,0.44,1);
-}
-
-.placeholder.placeholder--trans-out {
-	-webkit-transition: -webkit-transform $anim-time;
-	transition: transform $anim-time;
-}
-
-.title--preview {
-   -webkit-transition-delay: 0.15s;
-   transition-delay: 0.15s;
-}
-
-.grid__item--animate .title--preview {
-   -webkit-transition-delay: 0s;
-   transition-delay: 0s;
-   opacity: 0;
-   -webkit-transform: translate3d(0, -20px, 0);
-   transform: translate3d(0, -20px, 0);
-}

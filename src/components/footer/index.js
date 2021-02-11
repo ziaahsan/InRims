@@ -15,11 +15,11 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['appName', '$scope', '$location', '$window', function (appName, $scope, $location, $window) {
+         return ['appInfo', '$scope', '$location', '$window', function (appInfo, $scope, $location, $window) {
             var ctrl = this;
 
             // App name
-            ctrl.appName = appName;
+            ctrl.appName = appInfo.name;
             ctrl.date = new Date();
 
             // Clean up

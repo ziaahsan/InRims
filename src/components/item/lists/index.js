@@ -16,7 +16,7 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['$scope', '$location', '$http', '$window', '$sce', function ($scope, $location, $http, $window, $sce) {
+         return ['appInfo', '$scope', '$location', '$http', '$window', '$sce', function (appInfo, $scope, $location, $http, $window, $sce) {
             var ctrl = this;
 
             // Setup cards
@@ -44,8 +44,7 @@ angular
 
             // @todo: For now fetch all data, but in general this is not the case
             function loadRimJson () {
-               let url = 'http://192.168.2.31/AngularJS/Wheels/data/rims.json';
-               $http.get(url).then(results => {
+               $http.get(appInfo.jsonDataURL).then(results => {
                   ctrl.cards = results.data;
                })
             }

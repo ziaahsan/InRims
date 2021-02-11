@@ -11,7 +11,11 @@
    // on-ready do...
    angular
       .module('js.angular.app', ['ngRoute', 'ngAnimate', 'ngSanitize'])
-      .constant('appName', 'InRims')
+      .constant('appInfo', {
+         name: 'InRims',
+         jsonDataURL: 'http://192.168.2.31/AngularJS/InRims/client/data/rims.json',
+         serverIP: '',
+      })
       .config(($routeProvider) => {
          // Routing
          $routeProvider
@@ -23,7 +27,6 @@
          $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
             // Change page pageTitle, based on Route information
             $rootScope.rootData = {
-               websiteTitle: 'InRims',
                pageTitle: current.$$route.pageTitle,
                partialURI: current.$$route.partialURI
             };
