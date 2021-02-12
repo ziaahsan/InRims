@@ -8,12 +8,23 @@
  *    https://docs.angularjs.org/guide/component-router (@Router LifeCycle Hooks)
  */
 (function () {
+
+   // Setup URL for getting data...
+   // @todo: Move this to database if needed but for sake of AGILE this is good
+   function getDataURL() {
+      let protocol = window.location.protocol;
+      let host = window.location.host;
+      let url = `${protocol}//${host}`
+      url += host === "inrims.com" ? `/data/rims.json` : '/InRims/data/rims.json';
+      return url
+   }
+
    // on-ready do...
    angular
       .module('js.angular.app', ['ngRoute', 'ngAnimate', 'ngSanitize'])
       .constant('appInfo', {
          name: 'InRims',
-         jsonDataURL: `http://${window.location.host}/InRims/data/rims.json`,
+         jsonDataURL: getDataURL(),
          serverIP: '54.209.67.195',
       })
       .config(['$routeProvider', function ($routeProvider) {
