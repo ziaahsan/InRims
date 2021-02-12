@@ -1,0 +1,143 @@
+{
+   "b100": {
+      "bolt_pattern": "5x120",
+      "bore_size": "72.6MM",
+      "currency": "cad",
+      "colors": ["SATIN BLACK"],
+      "compatible_with": "BMW 3 Series '16-'18",
+      "description": "18x8 Satin black replicas of BMW's 666m wheels designed to fit BMW 3 series 2006 to 2018.",
+      "extra_info": [
+         {
+            "title": "RIM SIZE: 18X8",
+            "description": "Square setup perfect for 3 series"
+         },
+         {
+            "title": "CENTER BORE: 72.6MM",
+            "description": "Factory fit and will require no center bore rings"
+         },
+         {
+            "title": "COLOR: SATIN BLACK",
+            "description": "Smooth satin black finish that shines just the right amount"
+         },
+         {
+            "title": "OFFSET: 35",
+            "description": "Factory recommended offset for 18x8 inch rims"
+         },
+         {
+            "title": "BOLT PATTERN: 5X120",
+            "description": "OEM bolt pattern, the same as all BMWs"
+         },
+         {
+            "title": "MATERIAL & WEIGHT: ALUMINUM 10KG PER RIM",
+            "description": "Made of light aluminum that can sustain track use"
+         }
+      ],
+      "image": {
+         "sprite": "images\/b100_ss.png",
+         "model": "images\/b100.png"
+      },
+      "price": "175",
+      "sizes": ["18x8"],
+      "stock":  {
+         "quantity": 25
+      },
+      "svg_pattern": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 200 200\" style=\"fill: #ff701f;width: 300px;\">\r\n                        <path d=\"M60.3,-47.7C69.7,-36.3,63.1,-11.7,57.2,12.7C51.4,37.1,46.2,61.2,31.4,70.3C16.7,79.3,-7.8,73.2,-30,62.4C-52.1,51.7,-72,36.3,-74.4,19C-76.7,1.6,-61.6,-17.7,-46.3,-30.5C-31,-43.2,-15.5,-49.3,5,-53.3C25.4,-57.2,50.9,-59.1,60.3,-47.7Z\" transform=\"translate(100 100)\" \/>\r\n                      <\/svg>",
+      "title": "B100",
+      "type": "BMW",
+      "uri": "b100"
+   },
+   "m100": {
+      "bolt_pattern": "5x120",
+      "bore_size": "72.6MM",
+      "currency": "cad",
+      "colors": ["SATIN BLACK"],
+      "compatible_with": "BMW 3 Series '16-'18",
+      "description": "18x8 Satin black replicas of BMW's 666m wheels designed to fit BMW 3 series 2006 to 2018.",
+      "extra_info": [
+         {
+            "title": "RIM SIZE: 18X8",
+            "description": "Square setup perfect for 3 series"
+         },
+         {
+            "title": "CENTER BORE: 72.6MM",
+            "description": "Factory fit and will require no center bore rings"
+         },
+         {
+            "title": "COLOR: SATIN BLACK",
+            "description": "Smooth satin black finish that shines just the right amount"
+         },
+         {
+            "title": "OFFSET: 35",
+            "description": "Factory recommended offset for 18x8 inch rims"
+         },
+         {
+            "title": "BOLT PATTERN: 5X120",
+            "description": "OEM bolt pattern, the same as all BMWs"
+         },
+         {
+            "title": "MATERIAL & WEIGHT: ALUMINUM 10KG PER RIM",
+            "description": "Made of light aluminum that can sustain track use"
+         }
+      ],
+      "image": {
+         "sprite": "images\/m100_ss.png",
+         "model": "images\/m100.png"
+      },
+      "price": "175",
+      "sizes": ["18x8"],
+      "stock":  {
+         "quantity": 0
+      },
+      "svg_pattern": "<svg xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 500 500\" style=\"fill: #455ad2;width: 300px;\">\r\n                        <path d=\"M156.4,339.5c31.8-2.5,59.4-26.8,80.2-48.5c28.3-29.5,40.5-47,56.1-85.1c14-34.3,20.7-75.6,2.3-111  c-18.1-34.8-55.7-58-90.4-72.3c-11.7-4.8-24.1-8.8-36.8-11.5l-0.9-0.9l-0.6,0.6c-27.7-5.8-56.6-6-82.4,3c-38.8,13.6-64,48.8-66.8,90.3c-3,43.9,17.8,88.3,33.7,128.8c5.3,13.5,10.4,27.1,14.9,40.9C77.5,309.9,111,343,156.4,339.5z\"\/>\r\n                     <\/svg>",
+      "title": "M100",
+      "type": "BMW",
+      "uri": "m100"
+   },
+   "w100": {
+      "bolt_pattern": "5x120",
+      "bore_size": "72.6MM",
+      "currency": "cad",
+      "colors": ["SATIN BLACK"],
+      "compatible_with": "BMW 3 Series '16-'18",
+      "description": "18x8 Satin black replicas of BMW's 666m wheels designed to fit BMW 3 series 2006 to 2018.",
+      "extra_info": [
+         {
+            "title": "RIM SIZE: 18X8",
+            "description": "Square setup perfect for 3 series"
+         },
+         {
+            "title": "CENTER BORE: 72.6MM",
+            "description": "Factory fit and will require no center bore rings"
+         },
+         {
+            "title": "COLOR: SATIN BLACK",
+            "description": "Smooth satin black finish that shines just the right amount"
+         },
+         {
+            "title": "OFFSET: 35",
+            "description": "Factory recommended offset for 18x8 inch rims"
+         },
+         {
+            "title": "BOLT PATTERN: 5X120",
+            "description": "OEM bolt pattern, the same as all BMWs"
+         },
+         {
+            "title": "MATERIAL & WEIGHT: ALUMINUM 10KG PER RIM",
+            "description": "Made of light aluminum that can sustain track use"
+         }
+      ],
+      "image": {
+         "sprite": "images\/w100_ss.png",
+         "model": "images\/w100.png"
+      },
+      "price": "175",
+      "sizes": ["18x8"],
+      "stock":  {
+         "quantity": 0
+      },
+      "svg_pattern": " <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\"  version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 200 200\" style=\"fill: #ff0066;width: 300px;\">\r\n                        <path d=\"M46.5,-18.8C53.4,5.9,47.1,31.1,29.3,45.1C11.5,59.2,-17.8,62,-34.8,49.4C-51.8,36.7,-56.4,8.4,-48.5,-17.6C-40.7,-43.7,-20.3,-67.5,-0.2,-67.4C19.9,-67.4,39.7,-43.4,46.5,-18.8Z\" transform=\"translate(100 100)\"\/>\r\n                     <\/svg>",
+      "title": "W100",
+      "type": "BMW",
+      "uri": "w100"
+   }
+}
