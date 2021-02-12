@@ -13,16 +13,17 @@
       .module('js.angular.app', ['ngRoute', 'ngAnimate', 'ngSanitize'])
       .constant('appInfo', {
          name: 'InRims',
-         jsonDataURL: 'http://192.168.2.31/AngularJS/InRims/client/data/rims.json',
-         serverIP: '',
+         jsonDataURL: `http://${window.location.host}/InRims/data/rims.json`,
+         serverIP: '54.209.67.195',
       })
-      .config(($routeProvider) => {
+      .config(['$routeProvider', function ($routeProvider) {
+
          // Routing
          $routeProvider
             .when("/", { templateUrl: "src/view.html", partialURI: 'root', pageTitle: 'Home' })
             .when("/details/:id", { templateUrl: "src/view.html", partialURI: 'details', pageTitle: 'Rim Model B100' })
             .when("/cart/:id", { templateUrl: "src/view.html", partialURI: 'cart', pageTitle: 'Reserve B100' });
-      })
+      }])
       .run(($rootScope, $location) => {
          $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
             // Change page pageTitle, based on Route information

@@ -1,7 +1,11 @@
-Order deny,allow
+# Disable directory browsing
+Options All -Indexes
 
-# disable directory browsing
-Options -Indexes
+# Block Viewing .htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
 
 # prevent folder listing
 IndexIgnore *
@@ -9,6 +13,38 @@ IndexIgnore *
 # Default handler
 DirectoryIndex index.html
 
-<Files ~ "\.(html|css|js|jsx|png|map)$">
+<Files ~ "\.(html|css|js|jsx|png|map|json)$">
    allow from all
 </Files>
+
+# ----------------------------------------------------------------------
+# Rewrite engine
+# ----------------------------------------------------------------------
+
+# Turning on the rewrite engine is necessary for the following rules and features.
+# FollowSymLinks must be enabled for this to work.
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+   # XSS prevention (somewhat)
+	Header set X-XSS-Protection "1; mode=block"
+
+	#This prevents HTTPS click through prompts and redirects HTTP requests to HTTPS
+	Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+	#Instruct browser to consider files types as defined and disallow content sniffing
+	Header set X-Content-Type-Options nosniff
+
+   #Send FULL URL on the same origin. However, send only origin URL in other cases
+	Header set Referrer-Policy "origin-when-cross-origin"
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+    ErrorDocument 404 index.html
+</IfModule>
+
+# Disable server
+ServerSignature Off
