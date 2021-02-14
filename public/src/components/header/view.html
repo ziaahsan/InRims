@@ -8,14 +8,8 @@
                      <b>{{ $ctrl.appName }}</b>
                   </a>
                </li>
-               <li>
-                  <a uk-scroll ng-click="redirect('pageA')" class="uk-text-capitalize">B100</a>
-               </li>
-               <li>
-                  <a uk-scroll ng-click="redirect('pageB')" class="uk-text-capitalize">M100</a>
-               </li>
-               <li>
-                  <a uk-scroll ng-click="redirect('pageB')" class="uk-text-capitalize">W100</a>
+               <li ng-repeat="navItem in $ctrl.navItems">
+                  <a uk-scroll ng-click="redirect($event, 'details', navItem.uri)" class="uk-text-capitalize">{{ navItem.title }}</a>
                </li>
             </ul>
             <ul class="uk-navbar-nav uk-hidden@s">

@@ -1,0 +1,6 @@
+# Folders to ignore
+server/config/default.json
+server/data/requests/*
+node_modules
+
+# Files to ignore

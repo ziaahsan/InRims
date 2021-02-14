@@ -12,11 +12,7 @@
    // Setup URL for getting data...
    // @todo: Move this to database if needed but for sake of AGILE this is good
    function getDataURL() {
-      let protocol = window.location.protocol;
-      let host = window.location.host;
-      let url = `${protocol}//${host}`
-      url += host === "inrims.com" ? `/data/rims.json` : '/InRims/data/rims.json';
-      return url
+      return `${window.location.protocol}//${window.location.host}:3001/rims/`
    }
 
    // on-ready do...
@@ -28,7 +24,6 @@
          serverIP: '54.209.67.195',
       })
       .config(['$routeProvider', function ($routeProvider) {
-
          // Routing
          $routeProvider
             .when("/", { templateUrl: "src/view.html", partialURI: 'root', pageTitle: 'Home' })

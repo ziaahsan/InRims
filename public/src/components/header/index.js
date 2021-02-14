@@ -15,8 +15,11 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['appInfo', '$scope', '$location', '$window', function (appInfo, $scope, $location, $window) {
+         return ['appInfo', '$scope', '$location', '$window', '$http', function (appInfo, $scope, $location, $window, $http) {
             var ctrl = this;
+
+            // Setup items
+            ctrl.navItems = '';
 
             // App name
             ctrl.appName = appInfo.name;
@@ -28,12 +31,20 @@ angular
 
             // Initialization on-start
             ctrl.$onInit = function () {
-
+               loadRimJson();
             }
 
-            // Redirection
-            $scope.redirect = function ($event, path) {
+           // Redirection
+           $scope.redirect = function (...args) {
+               let uri = `${args[1]}/${args[2]}`;
+               $location.path(uri);
+            }
 
+            // @todo: For now fetch all just like lists, but in general this is not the case
+             function loadRimJson () {
+               $http.get(appInfo.jsonDataURL).then(results => {
+                  ctrl.navItems = results.data;
+               })
             }
          }];
       }
