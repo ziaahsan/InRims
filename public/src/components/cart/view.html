@@ -64,12 +64,12 @@
                   <p class="uk-margin-remove">Choose an option from below:</p>
                   <div class="uk-margin">
                      <div uk-form-custom="target: > * > span:first-child">
-                         <select>
+                         <select name="location">
                              <option value="">Please select City</option>
-                             <option value="1">Option 01</option>
-                             <option value="2">Option 02</option>
-                             <option value="3">Option 03</option>
-                             <option value="4">Option 04</option>
+                             <option value="opt 1">Option 01</option>
+                             <option value="opt 2">Option 02</option>
+                             <option value="opt 3">Option 03</option>
+                             <option value="opt 4">Option 04</option>
                          </select>
                          <button class="uk-button uk-button-default" type="button" tabindex="-1">
                              <span></span>
@@ -79,14 +79,20 @@
                      <div class="uk-margin">
                         <div class="uk-inline uk-width-large">
                             <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: phone"></a>
-                            <input class="uk-input" type="text" placeholder="* Phone Number Required for Reservation Verfication">
+                            <input class="uk-input" type="text" name="phone-number" placeholder="* Phone Number Required for Reservation Verfication">
                         </div>
                     </div>
                  </div>
                </div>
                <div>
-                  <button class="uk-button uk-button-primary uk-border-rounded">Reserve {{ $ctrl.info.title }} Model</button>
-                  <button class="uk-button uk-button-default uk-border-rounded">Cancel</button>
+                  <div class="uk-margin uk-text-small">
+                     <span class="cu-text-color-2" ng-if="$ctrl.error" ng-bind-html="sanitizeText($ctrl.error)"></span>
+                     <span class="cu-text-color-3" ng-if="$ctrl.success && !$ctrl.error" ng-bind-html="sanitizeText($ctrl.success)"></span>
+                  </div>
+                  <button class="uk-button uk-button-primary uk-border-rounded" ng-click="reserve()" ng-disabled="$ctrl.loading" ng-if="!$ctrl.success">
+                     <span ng-if="$ctrl.loading" uk-spinner="ratio: 0.5"></span>
+                     <span ng-if="!$ctrl.loading">Reserve {{ $ctrl.info.title }} Model</span>
+                  </button>
                   <p class="uk-text-small uk-width-large cu-text-color-2" ng-if="$ctrl.info.stock.quantity == 0">
                      <b>Out of Stock.</b><br/>Reserve model for when it becomes avliable.
                   </p>

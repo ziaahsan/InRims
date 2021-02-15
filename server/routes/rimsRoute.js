@@ -23,11 +23,11 @@ module.exports = (app) => {
    });
 
    // Saving request data to file
-   app.post('/rims/request',
+   app.post('/rims',
       [
-         check('phone').isNumeric().isMobilePhone(['en-CA']),
-         check('location').isLength({ min: 2 }).trim().escape().stripLow(),
-         check('title').isLength({ min: 2 }).trim().escape().stripLow(),
+         check('phone', 'Please make sure your phone number is correct.').isNumeric(),
+         check('location', 'Your location is invalid.').isLength({ min: 2 }).trim().escape().stripLow(),
+         check('title', 'Your title is invalid.').isLength({ min: 2 }).trim().escape().stripLow()
       ],
       async (req, res) => {
          // Handle error of body params
@@ -36,7 +36,6 @@ module.exports = (app) => {
             return res.status(400).json({
                error: true,
                message: errors.array(),
-               response: null
             });
          }
          
@@ -49,8 +48,7 @@ module.exports = (app) => {
          
          // @todo: Save the files outside the repository
          fs.writeFileSync(`data/requests/${Date.now()}.txt`, JSON.stringify({headers, body}, null, 3));
-         return res.status(400).json({
-            code: 200,
+         return res.status(200).json({
             token: body.token
          });
       }
