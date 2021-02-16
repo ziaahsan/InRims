@@ -2,5 +2,14 @@
    "server": {
       "env": "developement",
       "port": 3001
+   },
+   "ses": {
+      "source": "",
+      "replyTo": [""],
+      "toEmail": [""],
+      "apiVersion": "",
+      "accessKeyId": "",
+      "secrectAccessKey": "",
+      "region": ""
    }
 }

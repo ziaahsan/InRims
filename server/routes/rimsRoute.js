@@ -3,7 +3,7 @@ const Crypto = require('crypto-random-string');
 const { check, validationResult } = require('express-validator');
 const fs = require('fs');
 
-module.exports = (app) => {
+module.exports = (app, ses) => {
    app.get('/rims', async (req, res) => {
       // Get the param :slug and decode uri
       let { slug } = req.params;
@@ -38,16 +38,16 @@ module.exports = (app) => {
                message: errors.array(),
             });
          }
-         
+
          // Post request data
          const { headers, body } = req;
          body.token = Crypto({
             length: 4,
             type: 'alphanumeric'
          });
-         
+
          // @todo: Save the files outside the repository
-         fs.writeFileSync(`data/requests/${Date.now()}.txt`, JSON.stringify({headers, body}, null, 3));
+         fs.writeFileSync(`data/requests/${Date.now()}.txt`, JSON.stringify({ headers, body }, null, 3));
          return res.status(200).json({
             token: body.token
          });

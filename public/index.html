@@ -25,14 +25,14 @@
 			content="
             default-src 'self' localhost: https://inrims.com;
             style-src   'self' localhost: https://inrims.com https://fonts.googleapis.com 'unsafe-inline';
-            img-src     'self' localhost: https://inrims.com data: https:;
+            img-src     'self' localhost: data: https:;
             font-src    'self' localhost: https://inrims.com https://fonts.gstatic.com;
-            connect-src 'self' localhost: 192.168.2.31:3001 https://inrims.com https://api.inrims.com;
+            connect-src 'self' localhost: 192.168.2.31:3001 https://inrims.com https://inrims.com:3001;
             script-src  'self' localhost: https://inrims.com;
         "
 		/>
 
-		<title ng-bind="root.pageTitle">Page Title</title>
+		<title ng-bind="root.pageTitle">Loading Please Wait...</title>
 		<link
 			href="icons/favicon.png"
 			type="image/png"
