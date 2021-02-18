@@ -95,4 +95,8 @@ body {
 .cu-pe-none {
   pointer-events: none;
 }
+
+.cu-margin-auto {
+  margin: 0 auto;
+}
 /*# sourceMappingURL=custom.css.map */
