@@ -38,10 +38,28 @@ body {
    &font-lgc {
       font-family: 'lgc', sans-serif;
    }
-
+   &no-scroll {
+      overflow: hidden;
+   }
    &view {
       position: relative;
       display: block;
+   }
+   &modal {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
+      background-color: rgba(15, 15, 15, 0.9);
+      overflow-y: scroll;
+      &-details {
+         width: 98%;
+         margin: 0 auto;
+         top: 72px;
+         position: relative;
+         border-radius: 12px 12px 0 0;
+      }
    }
    &card-cart {
       &-notication {
@@ -72,5 +90,8 @@ body {
    }
    &border-dark {
       border: 1px solid #444;
+   }
+   &pe-none {
+      pointer-events: none;
    }
 }

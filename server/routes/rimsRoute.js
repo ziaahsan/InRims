@@ -25,9 +25,9 @@ module.exports = (app, ses) => {
    // Saving request data to file
    app.post('/rims',
       [
-         check('phone', 'Please make sure your phone number is correct.').isNumeric(),
-         check('location', 'Your location is invalid.').isLength({ min: 2 }).trim().escape().stripLow(),
-         check('title', 'Your title is invalid.').isLength({ min: 2 }).trim().escape().stripLow()
+         check('phone', 'Make sure your phone number is correct.').isNumeric(),
+         check('location', 'Provided location is not valid.').isLength({ min: 2 }).trim().escape().stripLow(),
+         check('title', 'Provided title is invalid.').isLength({ min: 2 }).trim().escape().stripLow()
       ],
       async (req, res) => {
          // Handle error of body params

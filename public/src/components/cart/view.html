@@ -1,108 +1,113 @@
-<div class="cu-clip-path-circle-expand">
-    <div class="uk-position-small uk-position-top-right uk-position-fixed">
-        <span uk-icon="icon: close"></span>
-    </div>
-    <div class="uk-position-small uk-position-top-left uk-position-fixed">
-        <span>Press 'Esc' to Close</span>
-    </div>
-    <div class="uk-container uk-container-xlarge" uk-height-viewport="offset-top: true">
-        <div class="uk-padding-large uk-child-width-expand@s" uk-grid>
-            <div>
-                <div uk-sticky="offset: 200;bottom: 400;">
-                    <img src="{{ $ctrl.info.image.model }}" width="800" uk-img>
-                     <span>
-                        <span class="uk-position-absolute uk-transform-center" style="left: 50%; top: 05%" href="#" uk-marker uk-tooltip="title: Rim Size"></span>
-                        <span class="uk-position-absolute uk-transform-center" style="left: 22%; top: 30%" href="#" uk-marker uk-tooltip="title: Finish"></span>
-                        <span class="uk-position-absolute uk-transform-center" style="left: 55%; top: 50%" href="#" uk-marker uk-tooltip="title: Bolt Pattern"></span>
-                        <span class="uk-position-absolute uk-transform-center" style="left: 45%; top: 35%" href="#" uk-marker uk-tooltip="title: Bore Size"></span>
-                     </span>
-                    <h4 class="uk-margin-remove uk-text-center">Upon delievery x4</h4>
-                    <h5 class="uk-margin-remove uk-text-center">Request for help if your need more information</h5>
-                </div>
-            </div>
-            <div>
-               <div class="uk-margin">
-                  <h1 class="uk-margin-remove">{{ $ctrl.info.title }}</h1>
-                  <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ $ctrl.info.currency }} {{ $ctrl.info.price }}/Set</p>
-                  <p class="uk-margin uk-width-large">{{ $ctrl.info.description }}</p>
-                  <p class="uk-margin-remove"><span uk-icon="icon: comment"></span> Have a question? <a href="#">Ask us.</a></p>
-               </div>
-               <div class="uk-margin">
-                  <h3 class="uk-margin-remove">Your Model</h3>
-                  <p class="uk-margin-remove">Will this fit my BMW model?</p>
-                  <div class="uk-padding-small uk-margin uk-border-rounded uk-width-medium cu-border-dark">
-                     <h4 class="uk-margin-remove">{{ $ctrl.info.extra_info[0].title }}</h4>
-                     <p class="uk-margin-remove">{{ $ctrl.info.extra_info[0].description }}</p>
+<div class="cu-modal">
+   <div class="cu-modal-details uk-background-secondary">
+      <div class="uk-position-medium uk-position-top-right">
+         <span uk-icon="icon: close" ng-click="closeOnEscKey()"></span>
+      </div>
+      <div class="uk-position-medium uk-position-top-left">
+         <span>Press 'Esc' to Close</span>
+      </div>
+      <div class="cu-clip-path-circle-expand" ng-keydown="keyPressed($event)">
+         <div class="uk-container uk-container-xlarge">
+            <div class="uk-padding-large uk-child-width-expand@s" uk-grid>
+               <div class="uk-flex uk-flex-center uk-flex-middle">
+                  <div>
+                     <img ng-src="{{ $ctrl.info.image.model }}" width="800" uk-img>
+                        <span>
+                           <span class="uk-position-absolute uk-transform-center" style="left: 37%; top: 26%" href="#" uk-marker uk-tooltip="title: Rim Size"></span>
+                           <span class="uk-position-absolute uk-transform-center" style="left: 20%; top: 30%" href="#" uk-marker uk-tooltip="title: Finish"></span>
+                           <span class="uk-position-absolute uk-transform-center" style="left: 28%; top: 40%" href="#" uk-marker uk-tooltip="title: Bolt Pattern"></span>
+                           <span class="uk-position-absolute uk-transform-center" style="left: 33%; top: 35%" href="#" uk-marker uk-tooltip="title: Bore Size"></span>
+                        </span>
+                     <h4 class="uk-margin-remove uk-text-center">Upon delievery x4</h4>
+                     <h5 class="uk-margin-remove uk-text-center">Request for help if your need more information</h5>
                   </div>
-               </div>
-               <div class="uk-margin">
-                  <h3 class="uk-margin-remove">Rim Finish</h3>
-                  <p class="uk-margin-remove">How the {{ $ctrl.info.title }} was compeleted</p>
-                  <div class="uk-padding-small uk-margin uk-border-rounded uk-width-small uk-text-center cu-border-dark"  ng-repeat="color in $ctrl.info.colors">
-                     <h4 class="uk-margin-remove"></h4>
-                     <p class="uk-margin-remove">{{ color }}</p>
-                  </div>
-               </div>
-               <div class="uk-margin">
-                  <h3 class="uk-margin-remove">Bolt & Bore Size</h3>
-                  <p class="uk-margin-remove">{{ $ctrl.info.title }} bolt pattern and bore size</p>
-                  <div class="uk-width-large uk-margin">
-                     <div class="uk-padding-small uk-border-rounded cu-border-dark uk-column-1-2 uk-column-divider uk-margin">
-                        <div>
-                           <h4 class="uk-margin-remove">Bolt Pattern</h4>
-                           <p class="uk-margin-remove">The {{ $ctrl.info.title }} has a bolt pattern of {{ $ctrl.info.bolt_pattern }}</p>
-                        </div>
-                        <div>
-                           <h4 class="uk-margin-remove">Bore Size</h4>
-                           <p class="uk-margin-remove">The Bore size of {{ $ctrl.info.title }} is {{ $ctrl.info.bore_size }}</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="uk-margin">
-                  <h3 class="uk-margin-remove">Devilery</h3>
-                  <p class="uk-margin-remove">Choose an option from below:</p>
-                  <div class="uk-margin">
-                     <div uk-form-custom="target: > * > span:first-child">
-                         <select name="location">
-                             <option value="">Please select City</option>
-                             <option value="opt 1">Option 01</option>
-                             <option value="opt 2">Option 02</option>
-                             <option value="opt 3">Option 03</option>
-                             <option value="opt 4">Option 04</option>
-                         </select>
-                         <button class="uk-button uk-button-default" type="button" tabindex="-1">
-                             <span></span>
-                             <span uk-icon="icon: chevron-down"></span>
-                         </button>
-                     </div>
-                     <div class="uk-margin">
-                        <div class="uk-inline uk-width-large">
-                            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: phone"></a>
-                            <input class="uk-input" type="text" name="phone-number" placeholder="* Phone Number Required for Reservation Verfication">
-                        </div>
-                    </div>
-                 </div>
                </div>
                <div>
-                  <div class="uk-margin uk-text-small">
-                     <span class="cu-text-color-2" ng-if="$ctrl.error" ng-bind-html="sanitizeText($ctrl.error)"></span>
-                     <span class="cu-text-color-3" ng-if="$ctrl.success && !$ctrl.error" ng-bind-html="sanitizeText($ctrl.success)"></span>
+                  <div class="uk-margin">
+                     <h1 class="uk-margin-remove">{{ $ctrl.info.title }}</h1>
+                     <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ $ctrl.info.currency }} {{ $ctrl.info.price }}/Set</p>
+                     <p class="uk-margin uk-width-large">{{ $ctrl.info.description }}</p>
+                     <p class="uk-margin-remove"><span uk-icon="icon: comment"></span> Have a question? <a href="#">Ask us.</a></p>
                   </div>
-                  <button class="uk-button uk-button-primary uk-border-rounded" ng-click="reserve()" ng-disabled="$ctrl.loading" ng-if="!$ctrl.success">
-                     <span ng-if="$ctrl.loading" uk-spinner="ratio: 0.5"></span>
-                     <span ng-if="!$ctrl.loading">Reserve {{ $ctrl.info.title }} Model</span>
-                  </button>
-                  <p class="uk-text-small uk-width-large cu-text-color-2" ng-if="$ctrl.info.stock.quantity == 0">
-                     <b>Out of Stock.</b><br/>Reserve model for when it becomes avliable.
-                  </p>
-                  <p class="uk-text-small uk-width-large" ng-if="$ctrl.info.stock.quantity != 0">
-                     This is only a reservation. Based on our demand we will verify before finalizing your order.
-                     This is not a commitment.
-                     If we are unable to verify your verfication you forefit your reservation.
-                  </p>
+                  <div class="uk-margin">
+                     <h3 class="uk-margin-remove">Your Model</h3>
+                     <p class="uk-margin-remove">Will this fit my BMW model?</p>
+                     <div class="uk-padding-small uk-margin uk-border-rounded uk-width-medium cu-border-dark">
+                        <h4 class="uk-margin-remove">{{ $ctrl.info.extra_info[0].title }}</h4>
+                        <p class="uk-margin-remove">{{ $ctrl.info.extra_info[0].description }}</p>
+                     </div>
+                  </div>
+                  <div class="uk-margin">
+                     <h3 class="uk-margin-remove">Rim Finish</h3>
+                     <p class="uk-margin-remove">How the {{ $ctrl.info.title }} was compeleted</p>
+                     <div class="uk-padding-small uk-margin uk-border-rounded uk-width-small uk-text-center cu-border-dark"  ng-repeat="color in $ctrl.info.colors">
+                        <h4 class="uk-margin-remove"></h4>
+                        <p class="uk-margin-remove">{{ color }}</p>
+                     </div>
+                  </div>
+                  <div class="uk-margin">
+                     <h3 class="uk-margin-remove">Bolt & Bore Size</h3>
+                     <p class="uk-margin-remove">{{ $ctrl.info.title }} bolt pattern and bore size</p>
+                     <div class="uk-width-large uk-margin">
+                        <div class="uk-padding-small uk-border-rounded cu-border-dark uk-column-1-2 uk-column-divider uk-margin">
+                           <div>
+                              <h4 class="uk-margin-remove">Bolt Pattern</h4>
+                              <p class="uk-margin-remove">The {{ $ctrl.info.title }} has a bolt pattern of {{ $ctrl.info.bolt_pattern }}</p>
+                           </div>
+                           <div>
+                              <h4 class="uk-margin-remove">Bore Size</h4>
+                              <p class="uk-margin-remove">The Bore size of {{ $ctrl.info.title }} is {{ $ctrl.info.bore_size }}</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="uk-margin">
+                     <h3 class="uk-margin-remove">Devilery</h3>
+                     <p class="uk-margin-remove">Choose an option from below:</p>
+                     <div class="uk-margin">
+                        <div uk-form-custom="target: > * > span:first-child">
+                           <select name="location">
+                              <option value="">Please select City</option>
+                              <option value="opt 1">Option 01</option>
+                              <option value="opt 2">Option 02</option>
+                              <option value="opt 3">Option 03</option>
+                              <option value="opt 4">Option 04</option>
+                           </select>
+                           <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                              <span></span>
+                              <span uk-icon="icon: chevron-down"></span>
+                           </button>
+                        </div>
+                        <div class="uk-margin">
+                           <div class="uk-inline uk-width-large">
+                              <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: phone"></a>
+                              <input class="uk-input" type="text" name="phone-number" placeholder="* Phone Number Required for Reservation Verfication">
+                           </div>
+                     </div>
+                  </div>
+                  </div>
+                  <div>
+                     <div class="uk-margin uk-text-small">
+                        <span class="cu-text-color-2" ng-if="$ctrl.error" ng-bind-html="sanitizeText($ctrl.error)"></span>
+                        <span class="cu-text-color-3" ng-if="$ctrl.success && !$ctrl.error" ng-bind-html="sanitizeText($ctrl.success)"></span>
+                     </div>
+                     <button class="uk-button uk-button-primary uk-border-rounded" ng-click="reserve()" ng-disabled="$ctrl.loading" ng-if="!$ctrl.success">
+                        <span ng-if="$ctrl.loading" uk-spinner="ratio: 0.5"></span>
+                        <span ng-if="!$ctrl.loading">Reserve {{ $ctrl.info.title }} Model</span>
+                     </button>
+                     <p class="uk-text-small uk-width-large cu-text-color-2" ng-if="$ctrl.info.stock.quantity == 0">
+                        <b>Out of Stock.</b><br/>Reserve model for when it becomes avliable.
+                     </p>
+                     <p class="uk-text-small uk-width-large" ng-if="$ctrl.info.stock.quantity != 0">
+                        This is only a reservation. Based on our demand we will verify before finalizing your order.
+                        This is not a commitment.
+                        If we are unable to verify your verfication you forefit your reservation.
+                     </p>
+                  </div>
                </div>
             </div>
-        </div>
-    </div>
+         </div>
+      </div>
+      <footer-overlay></footer-overlay>
+   </div>
 </div>

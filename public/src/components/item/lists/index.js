@@ -45,6 +45,7 @@ angular
             // @todo: For now fetch all data, but in general this is not the case
             function loadRimJson () {
                $http.get(appInfo.jsonDataURL).then(results => {
+                  if (!results.data) return;
                   ctrl.cards = results.data;
                })
             }

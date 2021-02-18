@@ -15,7 +15,7 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['appInfo', '$scope', '$http', '$routeParams', '$sce', '$interval', function (appInfo, $scope, $http, $routeParams, $sce, $interval) {
+         return ['appInfo', '$scope', '$http', '$stateParams', '$sce', '$interval', '$location', function (appInfo, $scope, $http, $stateParams, $sce, $interval, $location) {
             $scope.redirectTime = 5;
 
             var ctrl = this;
@@ -30,12 +30,14 @@ angular
 
             // Clean up
             ctrl.$onDestroy = function () {
-               $interval.cancel(redirectTimer);
+               $interval.cancel(ctrl.redirectTimer);
+               window.removeEventListener('keyup', keyPressed);
             }
 
             // Initialization on-start
             ctrl.$onInit = function () {
-               loadJSONData($routeParams.id);
+               loadJSONData($stateParams.id);
+               window.addEventListener('keyup', keyPressed);
             }
 
             // Make reservations
@@ -64,7 +66,6 @@ angular
                   "location": location,
                   "phone": phone
                }).then(results => {
-                  console.log(results)
                   ctrl.loading = false;
                   ctrl.error = '';
 
@@ -90,22 +91,30 @@ angular
             }
 
             // Esc key callback
-            function closeOnEscKey () {
-               
+            $scope.closeOnEscKey = function () {
+               $location.path("/");
+            }
+
+            function keyPressed (e) {
+               if(e.key === "Escape") {
+                  $scope.$apply(() => $scope.closeOnEscKey());
+               }
             }
 
             function redirectTimer() {
                $scope.redirectTime -=1;
+               let successMsg = `<b>Thank you for reserving</b><br/>Your reservation has been saved. We will call for verfication.<br/>You will be redirected in ${$scope.redirectTime} seconds.`
                ctrl.success = successMsg;
                if ($scope.redirectTime === 0) {
                   $interval.cancel(ctrl.redirectTimer);
-                  ctrl.success = "Redirecting..."
+                  // ctrl.success = "Redirecting...";
                }
             }
 
             // @todo: For now fetch all just like lists, but in general this is not the case
             function loadJSONData (id) {
                $http.get(appInfo.jsonDataURL).then(results => {
+                  if (!results.data[id]) return;
                   ctrl.info = results.data[id];
                });
             }

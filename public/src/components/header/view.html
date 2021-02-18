@@ -9,7 +9,7 @@
                   </a>
                </li>
                <li ng-repeat="navItem in $ctrl.navItems">
-                  <a uk-scroll ng-click="redirect($event, 'details', navItem.uri)" class="uk-text-capitalize">{{ navItem.title }}</a>
+                  <a uk-scroll ui-sref="index.details({id: navItem.uri})" class="uk-text-capitalize">{{ navItem.title }}</a>
                </li>
             </ul>
             <ul class="uk-navbar-nav uk-hidden@s">

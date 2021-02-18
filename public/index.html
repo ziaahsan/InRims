@@ -32,7 +32,7 @@
         "
 		/>
 
-		<title ng-bind="root.pageTitle">Loading Please Wait...</title>
+		<title ng-bind="pageTitle">Loading Please Wait...</title>
 		<link
 			href="icons/favicon.png"
 			type="image/png"
@@ -78,9 +78,13 @@
 		/>
 
 		<!-- JS -->
-		<script nonce="LZsMv0gG4lMX3i3XigG6h0CzPIjwrE" src="js/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			nonce="LZsMv0gG4lMX3i3XigG6h0CzPIjwrE"
+			src="js/jquery/3.5.1/jquery.min.js"
+		></script>
 		<script src="js/angular/1.8.2/angular.min.js"></script>
 		<script src="js/angular/1.8.2/angular-route.js"></script>
+		<script src="js/angular/1.0.29/angular-ui-router.min.js"></script>
 		<script src="js/angular/1.8.2/angular-animate.js"></script>
 		<script src="js/angular/1.8.2/angular-sanitize.min.js"></script>
 		<script src="js/scrollMagic/2.0.8/ScrollMagic.min.js"></script>
@@ -97,7 +101,12 @@
 		<script src="src/components/footer/index.js"></script>
 	</head>
 
-	<body class="uk-light uk-background-secondary">
-		<ng-view class="cu-view"></ng-view>
-	</body>
+	<body class="uk-light uk-background-secondary" ng-class="type === 'modal' ? 'cu-no-scroll' : ''">
+      <ui-view>
+         <div ui-view="header"></div>
+         <div ui-view="hero"></div>
+         <div ui-view="itemLists"></div>
+         <div ui-view="modal"></div>
+         <div ui-view="footer"></div>
+      </ui-view>
 </html>

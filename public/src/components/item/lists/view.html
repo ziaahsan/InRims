@@ -14,23 +14,23 @@
                  <div class="uk-card-body">
                      <h3 class="uk-margin-remove uk-card-title title--preview">{{ card.title }}</h3>
                      <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ card.currency }} {{ card.price }}/Set</p>
-                     <div class="uk-position-small uk-position-bottom-center" uk-tooltip="title: {{ card.compatible_with }}">
+                     <!-- <div class="uk-position-small uk-position-bottom-center" uk-tooltip="title: {{ card.compatible_with }}">
                         <span uk-icon="info"></span>
-                     </div>
+                     </div> -->
                      <p>{{ card.description }}</p>
-                     <a class="uk-button uk-button-default" ng-click="redirect($event, 'details', card.uri)">View Model</a>
+                     <a class="uk-button uk-button-default" ui-sref="index.details({id: card.uri})">View Model</a>
                      <span ng-if="card.stock.quantity > 0">
-                        <a class="uk-button uk-button-primary uk-box-shadow-medium" ng-click="redirect($event, 'cart', card.uri)">
+                        <a class="uk-button uk-button-primary uk-box-shadow-medium" ui-sref="index.cart({id: card.uri})">
                            <span uk-icon="cart"></span>
                         </a>
                         <p class="uk-text-small">
                            <span class="cu-text-color-3">{{ card.stock.quantity }} In Stock</span>
                            <br/>
-                           No online payment required.<br/>Simply reserve, and that's all.
+                           No online payment required.
                         </p>
                      </span>
                      <span ng-if="card.stock.quantity == 0">
-                        <a class="uk-button uk-button-secondary uk-box-shadow-medium" ng-click="redirect($event, 'cart', card.uri)">
+                        <a class="uk-button uk-button-secondary uk-box-shadow-medium" ui-sref="index.cart({id: card.uri})">
                            <span uk-icon="cart"></span>
                         </a>
                         <p class="uk-text-small"><span class="cu-text-color-2">Out of Stock.</span><br/>Check back later.</p>

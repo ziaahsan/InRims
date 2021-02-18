@@ -17,26 +17,48 @@
 
    // on-ready do...
    angular
-      .module('js.angular.app', ['ngRoute', 'ngAnimate', 'ngSanitize'])
+      .module('js.angular.app', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.router'])
       .constant('appInfo', {
          name: 'InRims',
          jsonDataURL: getDataURL(),
          serverIP: '54.209.67.195',
       })
-      .config(['$routeProvider', function ($routeProvider) {
-         // Routing
-         $routeProvider
-            .when("/", { templateUrl: "src/view.html", partialURI: 'root', pageTitle: 'Home' })
-            .when("/details/:id", { templateUrl: "src/view.html", partialURI: 'details', pageTitle: 'Rim Model B100' })
-            .when("/cart/:id", { templateUrl: "src/view.html", partialURI: 'cart', pageTitle: 'Reserve B100' });
+      .config(['$routeProvider', '$stateProvider', function ($routeProvider, $stateProvider) {
+         // Stating Instead of Routing
+         $stateProvider
+            .state('index', {
+               url: "/",
+               views: {
+                  'header': 'headerOverlay',
+                  'hero': 'heroOverlay',
+                  'itemLists': 'itemListsOverlay',
+                  'footer': 'footerOverlay',
+               },
+               data: { pageTitle: 'Home' },
+            })
+            .state('index.details', {
+               url: "details/:id",
+               views: {
+                  '!$default.modal': 'itemDetailsOverlay'
+               },
+               data: { pageTitle: 'Details', type: 'modal' }
+            })
+            .state('index.cart', {
+               url: "cart/:id",
+               views: {
+                  '!$default.modal': 'cartOverlay'
+               },
+               data: { pageTitle: 'Cart', type: 'modal' }
+            });
+
       }])
-      .run(($rootScope, $location) => {
-         $rootScope.$on("$routeChangeSuccess", function (event, current, previous) {
-            // Change page pageTitle, based on Route information
-            $rootScope.rootData = {
-               pageTitle: current.$$route.pageTitle,
-               partialURI: current.$$route.partialURI
-            };
+      .run((appInfo, $rootScope, $transitions) => {
+         $rootScope.pageTitle = appInfo.name;
+         $rootScope.type = 'page';
+
+         $transitions.onSuccess({}, ($transition$) => {
+            $rootScope.pageTitle = ($transition$.to().data && $transition$.to().data.pageTitle) ? `${appInfo.name} - ${$transition$.to().data.pageTitle}` : appInfo.name;
+            $rootScope.type = ($transition$.to().data && $transition$.to().data.type) ? $transition$.to().data.type : 'page';
          });
       });
 })();

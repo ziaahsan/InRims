@@ -43,6 +43,7 @@ angular
             // @todo: For now fetch all just like lists, but in general this is not the case
              function loadRimJson () {
                $http.get(appInfo.jsonDataURL).then(results => {
+                  if (!results.data) return;
                   ctrl.navItems = results.data;
                })
             }

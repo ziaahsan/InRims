@@ -31,9 +31,31 @@ body {
   font-family: 'lgc', sans-serif;
 }
 
+.cu-no-scroll {
+  overflow: hidden;
+}
+
 .cu-view {
   position: relative;
   display: block;
+}
+
+.cu-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.9);
+  overflow-y: scroll;
+}
+
+.cu-modal-details {
+  width: 98%;
+  margin: 0 auto;
+  top: 72px;
+  position: relative;
+  border-radius: 12px 12px 0 0;
 }
 
 .cu-card-cart-notication {
@@ -68,5 +90,9 @@ body {
 
 .cu-border-dark {
   border: 1px solid #444;
+}
+
+.cu-pe-none {
+  pointer-events: none;
 }
 /*# sourceMappingURL=custom.css.map */

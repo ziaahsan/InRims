@@ -15,7 +15,7 @@ angular
       // NG - controller
       //</summary>
       function controller() {
-         return ['appInfo', '$scope', '$location', '$window', '$http', '$routeParams', function (appInfo, $scope, $location, $window, $http, $routeParams) {
+         return ['appInfo', '$scope', '$location', '$window', '$http', '$stateParams', function (appInfo, $scope, $location, $window, $http, $stateParams) {
             let root = document.documentElement;
             var ctrl = this;
 
@@ -24,31 +24,37 @@ angular
 
             // Clean up
             ctrl.$onDestroy = function () {
-
+               window.removeEventListener('keyup', keyPressed);
             }
 
             // Initialization on-start
             ctrl.$onInit = function () {
-               makeScrollMagic();
-               loadJSONData($routeParams.id);
+               window.addEventListener('keyup', keyPressed);
+               loadJSONData($stateParams.id);
             }
 
             // Esc key callback
-            function closeOnEscKey () {
+            $scope.closeOnEscKey = function () {
+               $location.path("/");
+            }
 
+            function keyPressed(e) {
+               if (e.key === "Escape") {
+                  $scope.$apply(() => $scope.closeOnEscKey());
+               }
             }
 
             // @todo: For now fetch all just like lists, but in general this is not the case
-            function loadJSONData (id) {
-               $http.get(appInfo.jsonDataURL).then(results => {
+            function loadJSONData(id) {
+               $http.get(appInfo.jsonDataURL).then(async function(results) {
+                  if (!results.data[id]) return;
                   ctrl.info = results.data[id];
                   root.style.setProperty('--rim-sprite-sheet', `url("../${ctrl.info.image.sprite}")`);
+                  makeScrollMagic();
                })
             }
          }];
       }
-
-      
 
       //<summary>
       // ScrollMagic library to handle some AWESOME sprite management effects.
@@ -60,6 +66,7 @@ angular
          let scrollMagic;
 
          scrollMagic = new ScrollMagic.Controller({
+            container: ".cu-modal",
             globalSceneOptions: {
                triggerHook: 0
             }

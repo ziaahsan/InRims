@@ -1,67 +1,70 @@
-<div class="uk-width-1-1">
-   <div class="uk-position-small uk-position-top-right uk-position-fixed">
-      <span uk-icon="icon: close"></span>
-   </div>
-   <div class="uk-position-small uk-position-top-left uk-position-fixed">
-      <span>Press 'Esc' to Close</span>
-   </div>
-   <div class="uk-container uk-container-xlarge cu-clip-path-circle-expand">
-      <div class="uk-padding-large uk-text-center uk-width-xlarge uk-align-center">
-         <h1 class="uk-margin-remove">{{ $ctrl.info.title }}</h1>
-         <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ $ctrl.info.currency }} {{ $ctrl.info.price }}/Set</p>
-         <p class="uk-margin">{{ $ctrl.info.description }}</p>
-         <div class="uk-label uk-label-default uk-text-bold uk-box-shadow-small">{{ $ctrl.info.compatible_with }}</div>
+<div class="cu-modal">
+   <div class="cu-modal-details uk-background-secondary">
+      <div class="uk-position-medium uk-position-top-right">
+         <span uk-icon="icon: close" ng-click="closeOnEscKey()"></span>
       </div>
-      <div class="uk-flex uk-flex-center uk-padding-large cu-frame-rim">
-         <div class="uk-inline uk-position-z-index cu-frame-rim-bullet">
-            <div class="frame-rim"></div>
-            <div class="uk-position-small uk-position-top-left">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>1.</b> Rim Size: 18x8</dt>
-                  <dd>Square setup perfect for 3 series</dd>
-              </dl>
-            </div>
-            <div class="uk-position-small uk-position-center-left">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>2.</b> Center Bore: 72.6mm</dt>
-                  <dd>Factory fit and will require no center bore rings</dd>
-              </dl>
-            </div>
-            <div class="uk-position-small uk-position-bottom-left">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>3.</b> Color: Satin Black</dt>
-                  <dd>Smooth satin black finish that shines just the right amount</dd>
-              </dl>
-            </div>
-            <div class="uk-position-small uk-position-top-right">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>4.</b> Offset: 35</dt>
-                  <dd>Factory recommended offset for 18x8 inch rims</dd>
-              </dl>
-            </div>
-            <div class="uk-position-small uk-position-center-right">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>5.</b> Bolt Pattern: 5x120</dt>
-                  <dd>OEM bolt pattern, the same as all BMWs</dd>
-              </dl>
-            </div>
-            <div class="uk-position-small uk-position-bottom-right">
-               <dl class="uk-description-list ">
-                  <dt class="cu-text-color-white"><b>6.</b> Material & Weight: Aluminum 10kg per rim</dt>
-                  <dd>Made of light aluminum that can sustain track use</dd>
-              </dl>
+      <div class="uk-position-medium uk-position-top-left">
+         <span>Press 'Esc' to Close</span>
+      </div>
+      <div class="uk-container uk-container-xlarge cu-clip-path-circle-expand">
+         <div class="uk-padding-large uk-text-center uk-width-xlarge uk-align-center">
+            <h1 class="uk-margin-remove">{{ $ctrl.info.title }}</h1>
+            <p class="uk-margin-remove cu-text-color-0 uk-text-bold">{{ $ctrl.info.currency }} {{ $ctrl.info.price }}/Set</p>
+            <p class="uk-margin">{{ $ctrl.info.description }}</p>
+            <div class="uk-label uk-label-default uk-text-bold uk-box-shadow-small">{{ $ctrl.info.compatible_with }}</div>
+         </div>
+         <div class="uk-flex uk-flex-center uk-padding-large cu-frame-rim">
+            <div class="uk-inline uk-position-z-index cu-frame-rim-bullet">
+               <div class="frame-rim"></div>
+               <div class="uk-position-small uk-position-top-left">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>1.</b> Rim Size: 18x8</dt>
+                     <dd>Square setup perfect for 3 series</dd>
+               </dl>
+               </div>
+               <div class="uk-position-small uk-position-center-left">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>2.</b> Center Bore: 72.6mm</dt>
+                     <dd>Factory fit and will require no center bore rings</dd>
+               </dl>
+               </div>
+               <div class="uk-position-small uk-position-bottom-left">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>3.</b> Color: Satin Black</dt>
+                     <dd>Smooth satin black finish that shines just the right amount</dd>
+               </dl>
+               </div>
+               <div class="uk-position-small uk-position-top-right">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>4.</b> Offset: 35</dt>
+                     <dd>Factory recommended offset for 18x8 inch rims</dd>
+               </dl>
+               </div>
+               <div class="uk-position-small uk-position-center-right">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>5.</b> Bolt Pattern: 5x120</dt>
+                     <dd>OEM bolt pattern, the same as all BMWs</dd>
+               </dl>
+               </div>
+               <div class="uk-position-small uk-position-bottom-right">
+                  <dl class="uk-description-list ">
+                     <dt class="cu-text-color-white"><b>6.</b> Material & Weight: Aluminum 10kg per rim</dt>
+                     <dd>Made of light aluminum that can sustain track use</dd>
+               </dl>
+               </div>
             </div>
          </div>
+         <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity > 0">
+            <p class="uk-text-small">
+               <span class="cu-text-color-3">{{ $ctrl.info.stock.quantity }} In Stock</span>
+               <br/>
+               No online payment required.<br/>Simply reserve, and that's all.
+            </p>
+         </div>
+         <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity == 0">
+            <p class="uk-text-small"><span class="cu-text-color-2">Out of Stock.</span><br/>Check back later.</p>
+         </div>
       </div>
-      <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity > 0">
-         <p class="uk-text-small">
-            <span class="cu-text-color-3">{{ $ctrl.info.stock.quantity }} In Stock</span>
-            <br/>
-            No online payment required.<br/>Simply reserve, and that's all.
-         </p>
-      </div>
-      <div class="uk-padding-small uk-text-center uk-width-xlarge uk-align-center" ng-if="$ctrl.info.stock.quantity == 0">
-         <p class="uk-text-small"><span class="cu-text-color-2">Out of Stock.</span><br/>Check back later.</p>
-      </div>
+      <footer-overlay></footer-overlay>
    </div>
 </div>

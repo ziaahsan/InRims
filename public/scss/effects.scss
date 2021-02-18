@@ -31,7 +31,7 @@ $offset-val: 1200;
 }
 @for $i from 1 through $frame-count {
    .frame-rim-#{$i} {
-        background-position: -(($i * $offset-val) + 200) + px 50%;
+      background-position: -(($i * $offset-val) + 200) + px 50%;
    }
 }
 
