@@ -38,6 +38,15 @@ DirectoryIndex index.html
 
    #Send FULL URL on the same origin. However, send only origin URL in other cases
 	Header set Referrer-Policy "origin-when-cross-origin"
+
+   RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+   # Ensure Authorization header is passed along
+   RewriteCond %{HTTP:Authorization} .
+   RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 </IfModule>
 
 <IfModule !mod_rewrite.c>

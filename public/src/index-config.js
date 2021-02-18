@@ -26,6 +26,10 @@
       .config(['$routeProvider', '$stateProvider', function ($routeProvider, $stateProvider) {
          // Stating Instead of Routing
          $stateProvider
+            .state('root', {
+               url: '',
+               redirectTo: 'index', // @todo: not the best way to handle routing for root
+            })
             .state('index', {
                url: "/",
                views: {

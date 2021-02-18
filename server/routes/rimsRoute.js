@@ -47,10 +47,22 @@ module.exports = (app, ses) => {
          });
 
          // @todo: Save the files outside the repository
-         fs.writeFileSync(`data/requests/${Date.now()}.txt`, JSON.stringify({ headers, body }, null, 3));
-         return res.status(200).json({
-            token: body.token
-         });
+         try {
+            fs.writeFileSync(`data/requests/${Date.now()}.txt`, JSON.stringify({ headers, body }, null, 3));
+            return res.status(200).json({
+               token: body.token
+            });
+         } catch (err) {
+            return res.status(400).json({
+               error: true,
+               message: [{
+                  value: '',
+                  msg: 'Something went wrong internally. Leave feedback for error #1.',
+                  param: 'fatal',
+                  location: 'body',
+               }],
+            });
+         }
       }
    );
 }

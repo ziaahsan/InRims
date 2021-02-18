@@ -107,7 +107,7 @@ angular
                ctrl.success = successMsg;
                if ($scope.redirectTime === 0) {
                   $interval.cancel(ctrl.redirectTimer);
-                  // ctrl.success = "Redirecting...";
+                  $location.path("/");
                }
             }
 
